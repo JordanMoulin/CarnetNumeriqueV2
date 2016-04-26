@@ -8,7 +8,6 @@ public class Utilisateur {
 	private String prenom;
 	private String mdp;
 	private String classe;
-	private Categorie categorie;
 	
 	public void setId(int id){
 		this.id=id;
@@ -32,10 +31,6 @@ public class Utilisateur {
 	
 	public void setClasse(String classe){
 		this.classe=classe;
-	}
-	
-	public void setCategorie(Categorie categorie){
-		this.categorie=categorie;
 	}
 	
 	public int getId(){
@@ -62,10 +57,6 @@ public class Utilisateur {
 		return classe;
 	}
 	
-	public Categorie getCategorie(){
-		return categorie;
-	}
-	
 	public Utilisateur(){
 		id=0;
 		login="";
@@ -73,16 +64,14 @@ public class Utilisateur {
 		prenom="";
 		mdp="";
 		classe="";
-		categorie= new Categorie();
 	}
 	
-	public Utilisateur(int id, String login, String nom, String prenom, String mdp, String classe, Categorie categorie){
+	public Utilisateur(int id, String login, String nom, String prenom, String mdp, String classe){
 		this.id=id;
 		this.login=login;
 		this.nom=nom;
 		this.prenom=prenom;
 		this.mdp=mdp;
 		this.classe=classe;
-		this.categorie=categorie;
 	}
 }

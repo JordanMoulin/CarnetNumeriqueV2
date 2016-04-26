@@ -32,8 +32,7 @@ public class UtilisateurBD {
 						curseurResultat.getString("nom"), 
 						curseurResultat.getString("prenom"), 
 						curseurResultat.getString("mdp"), 
-						curseurResultat.getString("classe"), 
-						new CategorieBD().recupCategorie(maConnection, curseurResultat.getInt("idCateg")));
+						curseurResultat.getString("classe"));
 			}
 			
 		} catch (SQLException e) {
