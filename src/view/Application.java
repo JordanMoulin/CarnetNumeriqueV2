@@ -1,7 +1,6 @@
 package view;
 
 import java.awt.BorderLayout;
-import java.awt.Container;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -10,19 +9,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
-import javax.swing.JRadioButtonMenuItem;
-import javax.swing.JTable;
-import javax.swing.JProgressBar;
-
-import com.toedter.calendar.JCalendar;
-import com.toedter.components.JSpinField;
 import javax.swing.JButton;
-import javax.swing.SwingConstants;
 import javax.swing.JTextField;
-import javax.swing.JSplitPane;
-import javax.swing.JScrollPane;
-import java.awt.GridLayout;
-import java.awt.CardLayout;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
