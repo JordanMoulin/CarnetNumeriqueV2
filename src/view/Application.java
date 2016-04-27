@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.BorderLayout;
+import java.awt.Container;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -12,12 +13,25 @@ import javax.swing.JMenuItem;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JTable;
 import javax.swing.JProgressBar;
+
 import com.toedter.calendar.JCalendar;
 import com.toedter.components.JSpinField;
+import javax.swing.JButton;
+import javax.swing.SwingConstants;
+import javax.swing.JTextField;
+import javax.swing.JSplitPane;
+import javax.swing.JScrollPane;
+import java.awt.GridLayout;
+import java.awt.CardLayout;
+import javax.swing.JLabel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Application extends JFrame {
 
-	private JPanel contentPane;
+	private static JPanel contentPane;
+	private JTextField textField_1;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -46,32 +60,42 @@ public class Application extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		JMenu mnDivision = new JMenu("Absence");
-		menuBar.add(mnDivision);
+		JMenu mnAbsence = new JMenu("Absence");
+		mnAbsence.setEnabled(false);
+		menuBar.add(mnAbsence);
 		
-		JMenuItem mntmVisualiser = new JMenuItem("Visualiser");
-		mnDivision.add(mntmVisualiser);
+		JMenuItem absenceVisualiser = new JMenuItem("Visualiser");
+		mnAbsence.add(absenceVisualiser);
 		
-		JMenuItem mntmAjouter = new JMenuItem("Ajouter");
-		mnDivision.add(mntmAjouter);
+		JMenuItem absenceAjouter = new JMenuItem("Ajouter");
+		mnAbsence.add(absenceAjouter);
 		
 		JMenu mnRetard = new JMenu("Retard");
+		mnRetard.setEnabled(false);
 		menuBar.add(mnRetard);
 		
-		JMenuItem menuItem = new JMenuItem("Visualiser");
-		mnRetard.add(menuItem);
+		JMenuItem retardVisualiser = new JMenuItem("Visualiser");
+		mnRetard.add(retardVisualiser);
 		
-		JMenuItem menuItem_2 = new JMenuItem("Ajouter");
-		mnRetard.add(menuItem_2);
+		JMenuItem retardAjouter = new JMenuItem("Ajouter");
+		mnRetard.add(retardAjouter);
+		retardAjouter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Retard test = new Retard();
+				contentPane.add(test);
+				repaint();
+		        revalidate();
+			}
+		});
 		
-		JMenu menu = new JMenu("?");
-		menuBar.add(menu);
+		JMenu mnAide = new JMenu("?");
+		menuBar.add(mnAide);
 		
 		JMenuItem mntmAPropos = new JMenuItem("A propos");
-		menu.add(mntmAPropos);
+		mnAide.add(mntmAPropos);
 		
 		JMenuItem mntmAide = new JMenuItem("Aide");
-		menu.add(mntmAide);
+		mnAide.add(mntmAide);
 		
 		JMenuItem mntmFermer = new JMenuItem("fermer");
 		menuBar.add(mntmFermer);
@@ -82,6 +106,36 @@ public class Application extends JFrame {
 		
 		JPanel panel = new JPanel();
 		contentPane.add(panel, BorderLayout.CENTER);
+		panel.setLayout(null);
+		
+		JButton btnConnexion = new JButton("Connexion");
+		btnConnexion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				mnAbsence.setEnabled(true);
+				mnRetard.setEnabled(true);
+				contentPane.remove(panel);
+				repaint();
+			}
+		});
+		btnConnexion.setBounds(153, 159, 114, 23);
+		panel.add(btnConnexion);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(143, 117, 136, 31);
+		panel.add(textField_1);
+		textField_1.setColumns(10);
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		textField.setBounds(143, 53, 136, 31);
+		panel.add(textField);
+		
+		JLabel lblLogin = new JLabel("Login :");
+		lblLogin.setBounds(192, 34, 46, 14);
+		panel.add(lblLogin);
+		
+		JLabel lblMotDePasse = new JLabel("Mot de passe :");
+		lblMotDePasse.setBounds(153, 95, 102, 14);
+		panel.add(lblMotDePasse);
 	}
-
 }
