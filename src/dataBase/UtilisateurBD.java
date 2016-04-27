@@ -1,11 +1,11 @@
-package org.btssio.carnetnumerique.bd;
+package dataBase;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import org.btssio.carnetnumerique.object.Utilisateur;
+import object.Utilisateur;
 
 public class UtilisateurBD {
 

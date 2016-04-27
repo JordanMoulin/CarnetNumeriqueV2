@@ -1,4 +1,4 @@
-package vues;
+package view;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -15,7 +15,7 @@ import javax.swing.JProgressBar;
 import com.toedter.calendar.JCalendar;
 import com.toedter.components.JSpinField;
 
-public class Windows extends JFrame {
+public class Application extends JFrame {
 
 	private JPanel contentPane;
 
@@ -26,7 +26,7 @@ public class Windows extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Windows frame = new Windows();
+					Application frame = new Application();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,8 +38,8 @@ public class Windows extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Windows() {
-		setTitle("MVC");
+	public Application() {
+		setTitle("Carnet Num\u00E9rique");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		
@@ -63,6 +63,15 @@ public class Windows extends JFrame {
 		
 		JMenuItem menuItem_2 = new JMenuItem("Ajouter");
 		mnRetard.add(menuItem_2);
+		
+		JMenu menu = new JMenu("?");
+		menuBar.add(menu);
+		
+		JMenuItem mntmAPropos = new JMenuItem("A propos");
+		menu.add(mntmAPropos);
+		
+		JMenuItem mntmAide = new JMenuItem("Aide");
+		menu.add(mntmAide);
 		
 		JMenuItem mntmFermer = new JMenuItem("fermer");
 		menuBar.add(mntmFermer);

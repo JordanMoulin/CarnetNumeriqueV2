@@ -1,4 +1,4 @@
-package org.btssio.carnetnumerique.object;
+package object;
 
 public class Utilisateur {
 

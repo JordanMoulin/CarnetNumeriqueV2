@@ -1,4 +1,4 @@
-package org.btssio.carnetnumerique.bd;
+package dataBase;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -7,8 +7,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.btssio.carnetnumerique.object.Absence;
-import org.btssio.carnetnumerique.object.Utilisateur;
+import object.Absence;
+import object.Utilisateur;
 
 public class AbsenceBD {
 	public List<Absence> recupAbsence(Connection maConnection, Utilisateur utilisateur){
