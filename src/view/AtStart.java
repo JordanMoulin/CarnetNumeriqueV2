@@ -22,9 +22,10 @@ public class AtStart extends JFrame {
 	public JPanel contentPane;
 	public JPanel panel;
 	
-	private JTextField textField_1;
-	private JTextField textField;
 	protected MainControl monControleur;
+	
+	public JTextField textField_1;
+	public JTextField textField;
 	
 	public JButton btnConnexion;
 	
@@ -62,9 +63,11 @@ public class AtStart extends JFrame {
 		menuBar.add(mnAbsence);
 		
 		absenceVisualiser = new JMenuItem("Visualiser");
+		retardAjouter.addActionListener(monControleur);
 		mnAbsence.add(absenceVisualiser);
 		
 		absenceAjouter = new JMenuItem("Ajouter");
+		retardAjouter.addActionListener(monControleur);
 		mnAbsence.add(absenceAjouter);
 		
 		mnRetard = new JMenu("Retard");
@@ -72,6 +75,7 @@ public class AtStart extends JFrame {
 		menuBar.add(mnRetard);
 		
 		retardVisualiser = new JMenuItem("Visualiser");
+		retardAjouter.addActionListener(monControleur);
 		mnRetard.add(retardVisualiser);
 		
 		retardAjouter = new JMenuItem("Ajouter");
@@ -82,12 +86,16 @@ public class AtStart extends JFrame {
 		menuBar.add(mnAide);
 		
 		mntmAPropos = new JMenuItem("A propos");
+		retardAjouter.addActionListener(monControleur);
 		mnAide.add(mntmAPropos);
 		
 		mntmAide = new JMenuItem("Aide");
+		retardAjouter.addActionListener(monControleur);
 		mnAide.add(mntmAide);
 		
 		mntmFermer = new JMenuItem("D\u00E9connexion");
+		retardAjouter.addActionListener(monControleur);
+		mntmFermer.setEnabled(false);
 		menuBar.add(mntmFermer);
 		
 		contentPane = new JPanel();
