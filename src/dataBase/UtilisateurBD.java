@@ -18,7 +18,6 @@ public class UtilisateurBD {
 										+ "trim(prenom) as prenom, "
 										+ "trim(mdp) as mdp, "
 										+ "trim(classe) as classe, "
-										+ "idCateg "
 										+ "from utilisateur where login='" 
 										+ login 
 										+ "';";

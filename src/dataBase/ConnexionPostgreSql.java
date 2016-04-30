@@ -23,5 +23,4 @@ public class ConnexionPostgreSql {
 		}
 		 return connect;
 		}
-
 }

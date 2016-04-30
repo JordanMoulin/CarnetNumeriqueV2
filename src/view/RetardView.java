@@ -8,13 +8,17 @@ import com.toedter.components.JSpinField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class Retard extends JPanel {
+public class RetardView extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 
 	/**
 	 * Create the panel.
 	 */
-	public Retard() {
+	public RetardView() {
 		setLayout(null);
 		
 		JButton btnValider = new JButton("Valider");
