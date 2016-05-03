@@ -17,8 +17,8 @@ public class UtilisateurBD {
 										+ "trim(nom) as nom, "
 										+ "trim(prenom) as prenom, "
 										+ "trim(mdp) as mdp, "
-										+ "trim(classe) as classe, "
-										+ "from utilisateur where login='" 
+										+ "trim(classe) as classe "
+										+ "from ppe4.utilisateur where login='" 
 										+ login 
 										+ "';";
 			
@@ -43,7 +43,7 @@ public class UtilisateurBD {
 	public Boolean verifUtilisateur(Connection maConnection, String login, String mdp){
 		
 		String QUERY_SELECT_VERIFY = 	"select * "
-										+ "from utilisateur where login='"
+										+ "from ppe4.utilisateur where login='"
 										+ login
 										+ "' and mdp='"
 										+ mdp

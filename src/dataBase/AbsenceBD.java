@@ -18,7 +18,7 @@ public class AbsenceBD {
 										+ "dateDebut, "
 										+ "dateRetour, "
 										+ "trim(motif) as motif, "
-										+ "from retard where idUtilisateur=" 
+										+ "from ppe4.retard where idUtilisateur=" 
 										+ utilisateur.getId() 
 										+ ";";
 			
@@ -41,7 +41,7 @@ public class AbsenceBD {
 	
 	public boolean insertAbsence(Connection maConnection, Absence oAbsence){
 		try{
-			String QUERY_INSERT_NEW = 	"insert into absence (dateDebut, dateRetour, motif, idUtilisateur) "
+			String QUERY_INSERT_NEW = 	"insert into ppe4.absence (dateDebut, dateRetour, motif, idUtilisateur) "
 										+ "values ('" 
 										+ oAbsence.getDateDebut()
 										+ "', '" 
