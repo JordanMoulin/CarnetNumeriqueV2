@@ -20,6 +20,9 @@ public class VisualiserRetard extends JPanel {
 		tableR = new JTable();
 		tableR.setBounds(221, 105, 1, 1);
 		add(tableR);
-
+	}
+	
+	public VisualiserRetard clean(){
+		return new VisualiserRetard();
 	}
 }

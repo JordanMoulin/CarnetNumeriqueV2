@@ -43,6 +43,7 @@ public class AtStart extends JFrame {
 	 * Create the frame.
 	 */
 	public AtStart(MainControl unControleur) {
+		this.setResizable(false);
 		this.monControleur=unControleur;
 		oRetardView = new AjouterRetard(monControleur);
 		oEmpty = new Empty();

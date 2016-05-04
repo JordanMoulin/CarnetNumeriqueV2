@@ -20,5 +20,8 @@ public class VisualiserAbsence extends JPanel {
 		add(tableA);
 
 	}
-
+	
+	public VisualiserAbsence clean(){
+		return new VisualiserAbsence();
+	}
 }
