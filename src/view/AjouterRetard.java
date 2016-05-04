@@ -4,7 +4,6 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 
-import com.toedter.calendar.JDateChooser;
 import com.toedter.components.JSpinField;
 
 import control.MainControl;
