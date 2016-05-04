@@ -21,9 +21,13 @@ public class AtStart extends JFrame {
 	protected MainControl monControleur;
 	public JPanel contentPane;
 	public ConnexionView oConnexionView;
-	public AjouterRetard oRetardView;
+	public AjouterRetard oAjoutRetard;
 	public Empty oEmpty;
-	public AjouterAbsence oAbsenceView;
+	public AjouterAbsence oAjoutAbsence;
+	public VisualiserAbsence oVisuaAbsence;
+	public VisualiserRetard oVisuaRetard;
+	public Help oHelp;
+	public InfosApplication oInfosAppli;
 	
 	public JMenu mnRetard;
 	public JMenu mnAbsence;
@@ -45,9 +49,13 @@ public class AtStart extends JFrame {
 	public AtStart(MainControl unControleur) {
 		this.setResizable(false);
 		this.monControleur=unControleur;
-		oRetardView = new AjouterRetard(monControleur);
+		oAjoutRetard = new AjouterRetard(monControleur);
 		oEmpty = new Empty();
-		oAbsenceView = new AjouterAbsence(monControleur);
+		oAjoutAbsence = new AjouterAbsence(monControleur);
+		oVisuaAbsence = new VisualiserAbsence();
+		oVisuaRetard = new VisualiserRetard();
+		oHelp = new Help();
+		oInfosAppli = new InfosApplication();
 		
 		setTitle("Carnet Num\u00E9rique");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
