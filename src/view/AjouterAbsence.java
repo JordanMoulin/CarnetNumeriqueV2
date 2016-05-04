@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 
 import com.toedter.components.JSpinField;
 
+import control.AjouterAbsenceControl;
 import control.MainControl;
 
 import javax.swing.SwingConstants;
@@ -20,7 +21,7 @@ public class AjouterAbsence extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	protected MainControl monControleur;
+	protected AjouterAbsenceControl monControleur;
 	public JTextField txtMotifA;
 	public JDateChooser dateA;
 	public JDateChooser dateRetourA;
@@ -31,7 +32,7 @@ public class AjouterAbsence extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public AjouterAbsence(MainControl unControleur) {
+	public AjouterAbsence(AjouterAbsenceControl unControleur) {
 		this.monControleur=unControleur;
 		setLayout(null);
 		

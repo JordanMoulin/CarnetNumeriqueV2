@@ -6,7 +6,7 @@ import javax.swing.JButton;
 
 import com.toedter.components.JSpinField;
 
-import control.MainControl;
+import control.AjouterRetardControl;
 
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -18,7 +18,7 @@ public class AjouterRetard extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	protected MainControl monControleur;
+	protected AjouterRetardControl monControleur;
 	public JTextField txtMotifR;
 	public JButton btnValiderR;
 	public JSpinField minutesR;
@@ -26,13 +26,14 @@ public class AjouterRetard extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public AjouterRetard(MainControl unControleur) {
+	public AjouterRetard(AjouterRetardControl unControleur) {
 		this.monControleur=unControleur;
 		setLayout(null);
 		
 		btnValiderR = new JButton("Valider");
 		btnValiderR.setBounds(166, 194, 89, 23);
 		add(btnValiderR);
+		btnValiderR.addActionListener(monControleur);
 		
 		minutesR = new JSpinField();
 		minutesR.setBounds(194, 36, 40, 20);

@@ -9,6 +9,4 @@ public class AjouterRetardControl implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		
 	}
-	
-
 }

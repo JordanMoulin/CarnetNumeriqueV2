@@ -19,6 +19,10 @@ public class AtStart extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	protected MainControl monControleur;
+	protected AjouterRetardControl controlAjoutRetard;
+	protected AjouterAbsenceControl controlAjoutAbsence;
+	protected VisualiserRetardControl controlVisuaRetard;
+	protected VisualiserAbsenceControl controlVisuaAbsence;
 	public JPanel contentPane;
 	public ConnexionView oConnexionView;
 	public AjouterRetard oAjoutRetard;
@@ -46,14 +50,19 @@ public class AtStart extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public AtStart(MainControl unControleur) {
+	public AtStart(MainControl unControleur, AjouterRetardControl unControlAjoutRetard, AjouterAbsenceControl unControlAjoutAbsence, VisualiserRetardControl unControlVisuaRetard,
+			VisualiserAbsenceControl unControlVisuaAbsence) {
 		this.setResizable(false);
 		this.monControleur=unControleur;
-		oAjoutRetard = new AjouterRetard(monControleur);
+		this.controlAjoutRetard=unControlAjoutRetard;
+		this.controlAjoutAbsence=unControlAjoutAbsence;
+		this.controlVisuaRetard=unControlVisuaRetard;
+		this.controlVisuaAbsence=unControlVisuaAbsence;
+		oAjoutRetard = new AjouterRetard(controlAjoutRetard);
 		oEmpty = new Empty();
-		oAjoutAbsence = new AjouterAbsence(monControleur);
-		oVisuaAbsence = new VisualiserAbsence();
-		oVisuaRetard = new VisualiserRetard();
+		oAjoutAbsence = new AjouterAbsence(controlAjoutAbsence);
+		oVisuaAbsence = new VisualiserAbsence(controlVisuaAbsence);
+		oVisuaRetard = new VisualiserRetard(controlVisuaRetard);
 		oHelp = new Help();
 		oInfosAppli = new InfosApplication();
 		
