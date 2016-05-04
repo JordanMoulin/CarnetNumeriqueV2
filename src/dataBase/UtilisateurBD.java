@@ -28,10 +28,10 @@ public class UtilisateurBD {
 			while(curseurResultat.next()){
 				oUser = new Utilisateur(curseurResultat.getInt("id"), 
 						curseurResultat.getString("login"), 
-						curseurResultat.getString("nom"), 
-						curseurResultat.getString("prenom"), 
+						verifNull(curseurResultat.getString("nom")), 
+						verifNull(curseurResultat.getString("prenom")), 
 						curseurResultat.getString("mdp"), 
-						curseurResultat.getString("classe"));
+						verifNull(curseurResultat.getString("classe")));
 			}
 			
 		} catch (SQLException e) {
@@ -59,6 +59,13 @@ public class UtilisateurBD {
 			e.printStackTrace();
 		}
 		return false;
+	}
+	
+	private String verifNull(String verif){
+		if(verif.equals(null)){
+			return " ";
+		}
+		return verif;
 	}
 	
 }

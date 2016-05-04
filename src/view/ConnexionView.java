@@ -28,7 +28,7 @@ public class ConnexionView extends JPanel {
 		
 		btnConnexion = new JButton("Connexion");
 		btnConnexion.addActionListener(monControleur);
-		btnConnexion.addKeyListener(monControleur);
+		//btnConnexion.addKeyListener(monControleur);
 		btnConnexion.setBounds(153, 159, 114, 23);
 		add(btnConnexion);
 		

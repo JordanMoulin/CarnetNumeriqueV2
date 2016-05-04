@@ -74,4 +74,8 @@ public class Utilisateur {
 		this.mdp=mdp;
 		this.classe=classe;
 	}
+	
+	public Utilisateur clean(){
+		return new Utilisateur();
+	}
 }
