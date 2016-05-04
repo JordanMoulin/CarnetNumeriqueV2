@@ -7,6 +7,9 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import control.MainControl;
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.SwingConstants;
 
 public class ConnexionView extends JPanel {
 	/**
@@ -18,6 +21,7 @@ public class ConnexionView extends JPanel {
 	public JButton btnConnexion;
 	public JTextField password;
 	public JTextField login;
+	public JLabel lblErreur;
 
 	/**
 	 * Create the panel.
@@ -49,6 +53,14 @@ public class ConnexionView extends JPanel {
 		JLabel lblMotDePasse = new JLabel("Mot de passe :");
 		lblMotDePasse.setBounds(153, 95, 102, 14);
 		add(lblMotDePasse);
+		
+		lblErreur = new JLabel("You Fail !");
+		lblErreur.setHorizontalAlignment(SwingConstants.CENTER);
+		lblErreur.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblErreur.setForeground(Color.RED);
+		lblErreur.setBounds(153, 193, 114, 14);
+		add(lblErreur);
+		lblErreur.setVisible(false);
 	}
 	
 	public ConnexionView clean(){

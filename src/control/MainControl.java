@@ -43,6 +43,7 @@ public class MainControl implements ActionListener/*, KeyListener*/{
 				changementPanel(vue.oEmpty);
 			}
 			else{
+				vue.oConnexionView.lblErreur.setVisible(true);
 				vue.oConnexionView.password.setText("");
 				vue.oConnexionView.login.setText("");
 			}
