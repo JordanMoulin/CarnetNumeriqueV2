@@ -2,7 +2,7 @@ package view;
 
 import javax.swing.JPanel;
 
-public class infosApplication extends JPanel {
+public class InfosApplication extends JPanel {
 
 	/**
 	 * 
@@ -12,7 +12,7 @@ public class infosApplication extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public infosApplication() {
+	public InfosApplication() {
 
 	}
 
