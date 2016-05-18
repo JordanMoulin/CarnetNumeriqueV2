@@ -38,7 +38,7 @@ public class AjouterAbsence extends JPanel {
 		setLayout(null);
 		
 		dateA = new JDateChooser();
-		dateA.setBounds(113, 11, 87, 20);
+		dateA.setBounds(113, 11, 121, 20);
 		add(dateA);
 		
 		JLabel lblAbsentLe = new JLabel("Absent(e) le :");
@@ -50,7 +50,7 @@ public class AjouterAbsence extends JPanel {
 		add(lblRentre);
 		
 		dateRetourA = new JDateChooser();
-		dateRetourA.setBounds(113, 56, 87, 20);
+		dateRetourA.setBounds(113, 56, 121, 20);
 		add(dateRetourA);
 		
 		heuresA = new JSpinField();
@@ -72,7 +72,7 @@ public class AjouterAbsence extends JPanel {
 		add(lblHeure);
 		
 		btnValiderA = new JButton("Valider");
-		btnValiderA.setBounds(95, 208, 89, 23);
+		btnValiderA.setBounds(145, 208, 89, 23);
 		add(btnValiderA);
 		btnValiderA.addActionListener(monControleur);
 		
@@ -87,7 +87,7 @@ public class AjouterAbsence extends JPanel {
 		add(lblMotif);
 		
 		btnNettoyerA = new JButton("Nettoyer");
-		btnNettoyerA.setBounds(95, 179, 89, 23);
+		btnNettoyerA.setBounds(145, 179, 89, 23);
 		add(btnNettoyerA);
 		btnNettoyerA.addActionListener(monControleur);
 	}
