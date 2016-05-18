@@ -2,8 +2,6 @@ package control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import view.AjouterRetard;
 import view.AtStart;
 
 public class AjouterRetardControl implements ActionListener{
@@ -18,5 +16,9 @@ public class AjouterRetardControl implements ActionListener{
 		else if(e.getSource()==vue.oAjoutRetard.btnNettoyerR){
 			vue.oAjoutRetard.clean();
 		}
+	}
+
+	public void lienVue(AtStart laVue){
+		this.vue=laVue;
 	}
 }
