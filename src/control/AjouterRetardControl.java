@@ -15,6 +15,8 @@ public class AjouterRetardControl implements ActionListener{
 		if(e.getSource() == vue.oAjoutRetard.btnValiderR){
 			System.out.println("me dit pas que t'es vide");
 		}
-		
+		else if(e.getSource()==vue.oAjoutRetard.btnNettoyerR){
+			vue.oAjoutRetard.clean();
+		}
 	}
 }

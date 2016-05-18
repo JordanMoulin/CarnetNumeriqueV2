@@ -15,8 +15,6 @@ import dataBase.ConnexionPostgreSql;
 import dataBase.RetardBD;
 import dataBase.UtilisateurBD;
 import view.AtStart;
-import view.ConnexionView;
-import view.AjouterRetard;
 
 public class MainControl implements ActionListener/*, KeyListener*/{
 

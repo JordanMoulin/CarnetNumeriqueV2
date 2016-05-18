@@ -6,6 +6,7 @@ import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.ImageIcon;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -124,5 +125,6 @@ public class AtStart extends JFrame {
 		oConnexionView = new ConnexionView(monControleur);
 		contentPane.add(oConnexionView,BorderLayout.CENTER);
 		
+		this.setIconImage(new ImageIcon("img/ic_launcher.png").getImage());
 	}
 }

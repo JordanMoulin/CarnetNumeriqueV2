@@ -28,6 +28,7 @@ public class AjouterAbsence extends JPanel {
 	public JSpinField heuresA;
 	public JSpinField minutesA;
 	public JButton btnValiderA;
+	public JButton btnNettoyerA;
 
 	/**
 	 * Create the panel.
@@ -71,8 +72,9 @@ public class AjouterAbsence extends JPanel {
 		add(lblHeure);
 		
 		btnValiderA = new JButton("Valider");
-		btnValiderA.setBounds(96, 175, 89, 23);
+		btnValiderA.setBounds(95, 208, 89, 23);
 		add(btnValiderA);
+		btnValiderA.addActionListener(monControleur);
 		
 		txtMotifA = new JTextField();
 		txtMotifA.setColumns(10);
@@ -83,6 +85,11 @@ public class AjouterAbsence extends JPanel {
 		lblMotif.setHorizontalAlignment(SwingConstants.CENTER);
 		lblMotif.setBounds(10, 139, 89, 14);
 		add(lblMotif);
+		
+		btnNettoyerA = new JButton("Nettoyer");
+		btnNettoyerA.setBounds(95, 179, 89, 23);
+		add(btnNettoyerA);
+		btnNettoyerA.addActionListener(monControleur);
 	}
 	
 	public AjouterAbsence clean(){

@@ -22,6 +22,7 @@ public class AjouterRetard extends JPanel {
 	public JTextField txtMotifR;
 	public JButton btnValiderR;
 	public JSpinField minutesR;
+	public JButton btnNettoyerR;
 
 	/**
 	 * Create the panel.
@@ -60,6 +61,11 @@ public class AjouterRetard extends JPanel {
 		lblMotif.setBounds(166, 96, 89, 14);
 		lblMotif.setHorizontalAlignment(SwingConstants.CENTER);
 		add(lblMotif);
+		
+		btnNettoyerR = new JButton("Nettoyer");
+		btnNettoyerR.setBounds(166, 168, 89, 23);
+		add(btnNettoyerR);
+		btnNettoyerR.addActionListener(monControleur);
 	}
 	
 	public AjouterRetard clean(){
