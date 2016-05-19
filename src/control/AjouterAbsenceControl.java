@@ -20,6 +20,7 @@ public class AjouterAbsenceControl implements ActionListener{
 		this.controleurPrin = leControleur;
 	}
 	
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == vue.oAjoutAbsence.btnValiderA){

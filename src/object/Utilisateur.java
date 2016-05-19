@@ -2,7 +2,6 @@ package object;
 
 public class Utilisateur {
 
-	private int id;
 	private String login;
 	private String nom;
 	private String prenom;
@@ -10,10 +9,6 @@ public class Utilisateur {
 	private String classe;
 	private int categ;
 	
-	public void setId(int id){
-		this.id=id;
-	}
-
 	public void setLogin(String login){
 		this.login=login;
 	}
@@ -36,10 +31,6 @@ public class Utilisateur {
 	
 	public void setCateg(int categ){
 		this.categ=categ;
-	}
-	
-	public int getId(){
-		return id;
 	}
 	
 	public String getLogin(){
@@ -67,7 +58,6 @@ public class Utilisateur {
 	}
 	
 	public Utilisateur(){
-		id=0;
 		login="";
 		nom="";
 		prenom="";
@@ -76,8 +66,7 @@ public class Utilisateur {
 		categ=0;
 	}
 	
-	public Utilisateur(int id, String login, String nom, String prenom, String mdp, String classe, int categ){
-		this.id=id;
+	public Utilisateur(String login, String nom, String prenom, String mdp, String classe, int categ){
 		this.login=login;
 		this.nom=nom;
 		this.prenom=prenom;

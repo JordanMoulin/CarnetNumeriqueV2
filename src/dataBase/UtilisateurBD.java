@@ -12,7 +12,7 @@ public class UtilisateurBD {
 	public Utilisateur recupUtilisateur(Connection maConnection, String login){
 		Utilisateur oUser = null;
 		try {
-			String QUERY_SELECT_ALL = 	"select id, "
+			String QUERY_SELECT_ALL = 	"select "
 										+ "trim(login) as login, "
 										+ "trim(nom) as nom, "
 										+ "trim(prenom) as prenom, "
@@ -27,8 +27,7 @@ public class UtilisateurBD {
 			ResultSet curseurResultat = maRequete.executeQuery(QUERY_SELECT_ALL);
 			
 			while(curseurResultat.next()){
-				oUser = new Utilisateur(curseurResultat.getInt("id"), 
-						curseurResultat.getString("login"), 
+				oUser = new Utilisateur(curseurResultat.getString("login"), 
 						verifNull(curseurResultat.getString("nom")), 
 						verifNull(curseurResultat.getString("prenom")), 
 						curseurResultat.getString("mdp"), 

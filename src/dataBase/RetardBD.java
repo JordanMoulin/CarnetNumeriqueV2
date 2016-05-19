@@ -24,7 +24,7 @@ public class RetardBD {
 										+ "duree, "
 										+ "trim(motif) as motif, "
 										+ "from ppe4.retard where idUtilisateur=" 
-										+ utilisateur.getId() 
+										+ utilisateur.getLogin() 
 										+ ";";
 			
 			Statement maRequete = maConnection.createStatement();
@@ -54,7 +54,7 @@ public class RetardBD {
 									+ "', '" 
 									+ oRetard.getMotif() 
 									+ "', '" 
-									+ oRetard.getUtilisateur().getId()
+									+ oRetard.getUtilisateur().getLogin()
 									+"');";
 
 			Statement maRequete = maConnection.createStatement();

@@ -21,7 +21,7 @@ public class AbsenceBD {
 										+ "dateretourminture, "
 										+ "trim(motif) as motif, "
 										+ "from ppe4.retard where idutilisateur=" 
-										+ utilisateur.getId() 
+										+ utilisateur.getLogin() 
 										+ ";";
 			
 			Statement maRequete = maConnection.createStatement();
@@ -53,7 +53,7 @@ public class AbsenceBD {
 										+ "', '" 
 										+ oAbsence.getMotif() 
 										+ "', '" 
-										+ oAbsence.getUtilisateur().getId()
+										+ oAbsence.getUtilisateur().getLogin()
 										+"');";
 
 			Statement maRequete = maConnection.createStatement();
