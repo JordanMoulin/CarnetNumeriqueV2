@@ -15,10 +15,12 @@ public class AbsenceBD {
 		List<Absence> lAbsence= new ArrayList<Absence>();
 		try {
 			String QUERY_SELECT_ALL = 	"select id, "
-										+ "dateDebut, "
-										+ "dateRetour, "
+										+ "datedebut, "
+										+ "dateretour, "
+										+ "dateretourheure, "
+										+ "dateretourminture, "
 										+ "trim(motif) as motif, "
-										+ "from ppe4.retard where idUtilisateur=" 
+										+ "from ppe4.retard where idutilisateur=" 
 										+ utilisateur.getId() 
 										+ ";";
 			
@@ -27,8 +29,10 @@ public class AbsenceBD {
 			
 			while(curseurResultat.next()){
 				lAbsence.add(new Absence(curseurResultat.getInt("id"), 
-						curseurResultat.getDate("dateDebut"), 
-						curseurResultat.getDate("dateRetour"), 
+						curseurResultat.getDate("datedebut"), 
+						curseurResultat.getDate("dateretour"), 
+						curseurResultat.getInt("dateretourheure"), 
+						curseurResultat.getInt("dateretourminture"), 
 						curseurResultat.getString("motif"), 
 						utilisateur));
 			}
@@ -41,7 +45,7 @@ public class AbsenceBD {
 	
 	public boolean insertAbsence(Connection maConnection, Absence oAbsence){
 		try{
-			String QUERY_INSERT_NEW = 	"insert into ppe4.absence (dateDebut, dateRetour, motif, idUtilisateur) "
+			String QUERY_INSERT_NEW = 	"insert into ppe4.absence (datedebut, dateretour, dateretourheure, dateretourminute, motif, idUtilisateur) "
 										+ "values ('" 
 										+ oAbsence.getDateDebut()
 										+ "', '" 

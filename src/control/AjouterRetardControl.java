@@ -2,23 +2,31 @@ package control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import object.Retard;
+import dataBase.RetardBD;
 import view.AtStart;
 
 public class AjouterRetardControl implements ActionListener{
 
+	private MainControl controleurPrin;
 	private AtStart vue;
+	private Retard oRetard;
+	private RetardBD oRetardBD;
 	
+	public AjouterRetardControl(MainControl leControleur) {
+		this.controleurPrin=leControleur;
+	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == vue.oAjoutRetard.btnValiderR){
-			System.out.println(vue.oAjoutRetard.txtMotifR.getText()+" "+vue.oAjoutRetard.minutesR.getValue());
+			oRetard = new Retard(vue.oAjoutRetard.minutesR.getValue(), vue.oAjoutRetard.txtMotifR.getText(), controleurPrin.oUser);
+			//oRetardBD.insertRetard(controleurPrin.connect, oRetard); //uniquement en local au lycee
 		}
 		else if(e.getSource()==vue.oAjoutRetard.btnNettoyerR){
 			vue.oAjoutRetard = vue.oAjoutRetard.clean();
-			vue.contentPane.remove(vue.contentPane.getComponent(0));
-			vue.contentPane.add(vue.oAjoutRetard);
-			vue.repaint();
-			vue.revalidate();
+			controleurPrin.changementPanel(vue.oAjoutRetard);
 		}
 	}
 

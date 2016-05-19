@@ -1,13 +1,12 @@
 package object;
 
-import java.sql.Time;
 import java.util.Date;
 
 public class Retard {
 
 	private int id;
 	private Date dater;
-	private Time duree;
+	private int duree;
 	private String motif;
 	private Utilisateur utilisateur;
 	
@@ -19,7 +18,7 @@ public class Retard {
 		this.dater=dater;
 	}
 	
-	public void setDuree(Time duree){
+	public void setDuree(int duree){
 		this.duree=duree;
 	}
 	
@@ -39,7 +38,7 @@ public class Retard {
 		return dater;
 	}
 	
-	public Time getDuree(){
+	public int getDuree(){
 		return duree;
 	}
 	
@@ -54,12 +53,12 @@ public class Retard {
 	public Retard(){
 		id=0;
 		dater=null;
-		duree=null;
+		duree=0;
 		motif="";
 		utilisateur= new Utilisateur();
 	}
 	
-	public Retard(int id, Date dater, Time duree, String motif, Utilisateur utilisateur){
+	public Retard(int id, Date dater, int duree, String motif, Utilisateur utilisateur){
 		this.id=id;
 		this.dater=dater;
 		this.duree=duree;
@@ -67,8 +66,7 @@ public class Retard {
 		this.utilisateur=utilisateur;
 	}
 	
-	public Retard(Date dater, Time duree, String motif, Utilisateur utilisateur){
-		this.dater=dater;
+	public Retard(int duree, String motif, Utilisateur utilisateur){
 		this.duree=duree;
 		this.motif=motif;
 		this.utilisateur=utilisateur;

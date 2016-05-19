@@ -33,7 +33,7 @@ public class RetardBD {
 			while(curseurResultat.next()){
 				lRetard.add(new Retard(curseurResultat.getInt("id"), 
 						curseurResultat.getDate("dater"),
-						curseurResultat.getTime("duree"), 
+						curseurResultat.getInt("duree"), 
 						curseurResultat.getString("motif"), 
 						utilisateur));
 			}

@@ -10,8 +10,8 @@ public class PointDentree {
 	public static void main(String[] args) {
 		//Déclaration des contrôleurs
 		MainControl leControleur = new MainControl();
-		AjouterRetardControl leControlAjoutRetard = new AjouterRetardControl();
-		AjouterAbsenceControl leControlAjoutAbsence = new AjouterAbsenceControl();
+		AjouterRetardControl leControlAjoutRetard = new AjouterRetardControl(leControleur);
+		AjouterAbsenceControl leControlAjoutAbsence = new AjouterAbsenceControl(leControleur);
 		VisualiserRetardControl leControlVisuaRetard = new VisualiserRetardControl();
 		VisualiserAbsenceControl leControlVisuaAbsence = new VisualiserAbsenceControl();
 		

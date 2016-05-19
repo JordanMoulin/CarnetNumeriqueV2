@@ -18,7 +18,7 @@ public class UtilisateurBD {
 										+ "trim(prenom) as prenom, "
 										+ "trim(mdp) as mdp, "
 										+ "trim(classe) as classe, "
-										+ "categ, "
+										+ "categ "
 										+ "from ppe4.utilisateur where login='" 
 										+ login 
 										+ "';";

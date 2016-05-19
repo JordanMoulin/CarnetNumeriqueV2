@@ -20,11 +20,9 @@ public class MainControl implements ActionListener/*, KeyListener*/{
 
 	private AtStart vue;
 	
-	//private Connection connect = ConnexionPostgreSql.getInstance(); //uniquement en local au lycee
+	//public Connection connect = ConnexionPostgreSql.getInstance(); //uniquement en local au lycee
 	private UtilisateurBD oUserBD;
-	private AbsenceBD oAbsenceBD;
-	private RetardBD oRetardBD;
-	private Utilisateur oUser;
+	public Utilisateur oUser;
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -43,7 +41,6 @@ public class MainControl implements ActionListener/*, KeyListener*/{
 			else{
 				vue.oConnexionView.lblErreur.setVisible(true);
 				vue.oConnexionView.password.setText("");
-				vue.oConnexionView.login.setText("");
 			}
 		}
 		else if(e.getSource() == vue.retardAjouter){
@@ -83,7 +80,7 @@ public class MainControl implements ActionListener/*, KeyListener*/{
 		this.vue=laVue;
 	}
 	
-	private void changementPanel(JPanel nouveauPanel){
+	public void changementPanel(JPanel nouveauPanel){
 		vue.contentPane.remove(vue.contentPane.getComponent(0));
 		vue.contentPane.add(nouveauPanel);
 		vue.repaint();
