@@ -46,7 +46,7 @@ public class RetardBD {
 	
 	public boolean insertRetard(Connection maConnection, Retard oRetard){
 		try{
-			String QUERY_INSERT_NEW = 	"insert into ppe4.retard (date, duree, motif, idUtilisateur) "
+			String QUERY_INSERT_NEW = 	"insert into ppe4.retard (dater, duree, motif, idUtilisateur) "
 									+ "values ('"
 									+ new Date()
 									+ "', '" 

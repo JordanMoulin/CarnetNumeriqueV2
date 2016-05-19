@@ -51,6 +51,10 @@ public class AbsenceBD {
 										+ "', '" 
 										+ oAbsence.getDateRetour()
 										+ "', '" 
+										+ oAbsence.getDateRetourHeure()
+										+ "', '" 
+										+ oAbsence.getDateRetourMinute()
+										+ "', '" 
 										+ oAbsence.getMotif() 
 										+ "', '" 
 										+ oAbsence.getUtilisateur().getLogin()

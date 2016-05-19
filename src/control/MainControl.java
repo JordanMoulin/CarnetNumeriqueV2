@@ -20,7 +20,7 @@ public class MainControl implements ActionListener/*, KeyListener*/{
 
 	private AtStart vue;
 	
-	//public Connection connect = ConnexionPostgreSql.getInstance(); //uniquement en local au lycee
+	public Connection connect = ConnexionPostgreSql.getInstance(); //uniquement en local au lycee
 	private UtilisateurBD oUserBD;
 	public Utilisateur oUser;
 
@@ -29,13 +29,13 @@ public class MainControl implements ActionListener/*, KeyListener*/{
 		if(e.getSource()==vue.oConnexionView.btnConnexion){
 			oUserBD = new UtilisateurBD();
 			if(
-				//oUserBD.verifUtilisateur(connect, vue.oConnexionView.login.getText(), vue.oConnexionView.password.getText())){  //uniquement en local au lycee
-				vue.oConnexionView.login.getText().equals("admin") && vue.oConnexionView.password.getText().equals("admin")){
-				//oUser = oUserBD.recupUtilisateur(connect, vue.oConnexionView.login.getText()); //uniquement en local au lycee
+				oUserBD.verifUtilisateur(connect, vue.oConnexionView.login.getText(), vue.oConnexionView.password.getText())){  //uniquement en local au lycee
+				//vue.oConnexionView.login.getText().equals("admin") && vue.oConnexionView.password.getText().equals("admin")){
+				oUser = oUserBD.recupUtilisateur(connect, vue.oConnexionView.login.getText()); //uniquement en local au lycee
 				vue.mnAbsence.setEnabled(true);
 				vue.mnRetard.setEnabled(true);
 				vue.mntmDeconnexion.setEnabled(true);
-				//vue.lblPseudo.setText(oUser.getPrenom() + " " + oUser.getNom()); //uniquement en local au lycee
+				vue.lblPseudo.setText(oUser.getPrenom() + " " + oUser.getNom()); //uniquement en local au lycee
 				changementPanel(vue.oEmpty);
 			}
 			else{

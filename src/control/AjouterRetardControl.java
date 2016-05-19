@@ -16,13 +16,15 @@ public class AjouterRetardControl implements ActionListener{
 	
 	public AjouterRetardControl(MainControl leControleur) {
 		this.controleurPrin=leControleur;
+		oRetardBD = new RetardBD();
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == vue.oAjoutRetard.btnValiderR){
 			oRetard = new Retard(vue.oAjoutRetard.minutesR.getValue(), vue.oAjoutRetard.txtMotifR.getText(), controleurPrin.oUser);
-			//oRetardBD.insertRetard(controleurPrin.connect, oRetard); //uniquement en local au lycee
+			oRetardBD.insertRetard(controleurPrin.connect, oRetard); //uniquement en local au lycee
+			System.out.print(true);
 		}
 		else if(e.getSource()==vue.oAjoutRetard.btnNettoyerR){
 			vue.oAjoutRetard = vue.oAjoutRetard.clean();

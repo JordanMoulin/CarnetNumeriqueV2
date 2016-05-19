@@ -18,6 +18,7 @@ public class AjouterAbsenceControl implements ActionListener{
 	
 	public AjouterAbsenceControl(MainControl leControleur) {
 		this.controleurPrin = leControleur;
+		oAbsenceBD = new AbsenceBD();
 	}
 	
 	
@@ -25,7 +26,7 @@ public class AjouterAbsenceControl implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == vue.oAjoutAbsence.btnValiderA){
 			oAbsence = new Absence(vue.oAjoutAbsence.dateA.getDate(), vue.oAjoutAbsence.dateRetourA.getDate(), vue.oAjoutAbsence.heuresA.getValue(), vue.oAjoutAbsence.minutesA.getValue(), vue.oAjoutAbsence.txtMotifA.getText(), controleurPrin.oUser);
-			//oAbsenceBD.insertAbsence(controleurPrin.connect, oAbsence); //uniquement en local au lycee
+			oAbsenceBD.insertAbsence(controleurPrin.connect, oAbsence); //uniquement en local au lycee
 			
 		}
 		else if(e.getSource()==vue.oAjoutAbsence.btnNettoyerA){
