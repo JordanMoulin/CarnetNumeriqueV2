@@ -12,61 +12,85 @@ import dataBase.ConnexionPostgreSql;
 import dataBase.UtilisateurBD;
 import view.AtStart;
 
+/**
+ * Classe MainControl, cette classe contrôle toutes les actions effectuées sur les vues AtStart, ConnexionView et Empty
+ * On contrôle aussi les changements de Panel depuis ce contrôleur
+ * @author Erwan
+ *
+ */
 public class MainControl implements ActionListener/*, KeyListener*/{
 
 	private AtStart vue;
-	
 	public Connection connect = ConnexionPostgreSql.getInstance();
 	private UtilisateurBD oUserBD;
 	public Utilisateur oUser;
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		//Lorsqu'on clic sur le bouton de connexion
 		if(e.getSource()==vue.oConnexionView.btnConnexion){
 			oUserBD = new UtilisateurBD();
-			if(
-				oUserBD.verifUtilisateur(connect, vue.oConnexionView.login.getText(), vue.oConnexionView.password.getText())){ 
+			
+			//Si la connexion est acceptée (utilisateur dans la BDD avec bon login/mdp
+			if(oUserBD.verifUtilisateur(connect, vue.oConnexionView.login.getText(), vue.oConnexionView.password.getText())){ 
+				//on récupère toutes ses informations
 				oUser = oUserBD.recupUtilisateur(connect, vue.oConnexionView.login.getText()); 
+				
+				//on active quelques boutons
 				vue.mnAbsence.setEnabled(true);
 				vue.mnRetard.setEnabled(true);
 				vue.mntmDeconnexion.setEnabled(true);
-				if(oUser.getCateg()==1){
+				
+				//si c'est un admin, l'interface change légèrement
+				if(oUser.isAdmin()){
 					vue.retardAjouter.setVisible(false);
 					vue.absenceAjouter.setVisible(false);
-					vue.absenceVisualiser.setText("Visualiser tous les élèves");
-					vue.retardVisualiser.setText("Visualiser tous les élèves");
+					vue.absenceVisualiser.setText("Visualiser pour tous les élèves");
+					vue.retardVisualiser.setText("Visualiser pour tous les élèves");
 				}
-				vue.lblPseudo.setText(oUser.getPrenom().replaceFirst(".",(oUser.getPrenom().charAt(0)+"").toUpperCase()) + " " + oUser.getNom().toUpperCase());
 				
+				//affichage de son Prenom NOM en haut à droite
+				vue.lblPseudo.setText(" " + oUser.getPrenom().replaceFirst(".",(oUser.getPrenom().charAt(0)+"").toUpperCase()) + " " + oUser.getNom().toUpperCase() + " ");
+				
+				//on enleve la page de connexion
 				changementPanel(vue.oEmpty);
 			}
+			//sinon on affiche une erreur
 			else{
+				vue.oConnexionView.lblErreur.setText("Les identifiants ne sont pas corrects !");
 				vue.oConnexionView.lblErreur.setVisible(true);
 				vue.oConnexionView.password.setText("");
 			}
 		}
+		//Lorsqu'on clic sur le bouton Ajouter du menu Retard
 		else if(e.getSource() == vue.retardAjouter){
 			vue.oAjoutRetard = vue.oAjoutRetard.clean();
 			changementPanel(vue.oAjoutRetard);
 		}
+		//Lorsqu'on clic sur le bouton Ajouter du menu Absence
 		else if(e.getSource()==vue.absenceAjouter){
 			vue.oAjoutAbsence = vue.oAjoutAbsence.clean();
 			changementPanel(vue.oAjoutAbsence);
 		}
+		//Lorsqu'on clic sur le bouton Visualiser du menu Absence
 		else if(e.getSource()==vue.absenceVisualiser){
 			vue.oVisuaAbsence = vue.oVisuaAbsence.clean();
 			changementPanel(vue.oVisuaAbsence);
 		}
+		//Lorsqu'on clic sur le bouton Visualiser du menu Retard
 		else if(e.getSource()==vue.retardVisualiser){
 			vue.oVisuaRetard = vue.oVisuaRetard.clean();
 			changementPanel(vue.oVisuaRetard);
 		}
+		//Lorsqu'on clic sur le bouton Aide du menu ?
 		else if(e.getSource()==vue.mntmAide){
 			changementPanel(vue.oHelp);
 		}
+		//Lorsqu'on clic sur le bouton A Propos du menu ?
 		else if(e.getSource()==vue.mntmAPropos){
 			changementPanel(vue.oInfosAppli);
 		}
+		//Lorsqu'on clic sur le Déconnexion dans la barre des menus
 		else if(e.getSource()==vue.mntmDeconnexion){
 			vue.mnAbsence.setEnabled(false);
 			vue.mnRetard.setEnabled(false);
@@ -78,12 +102,23 @@ public class MainControl implements ActionListener/*, KeyListener*/{
 		}
 	}
 	
+	/**
+	 * Méthode permettant de lier ce controleur à la vue AtStart
+	 * @param laVue {@link AtStart}
+	 */
 	public void lienVue(AtStart laVue){
 		this.vue=laVue;
 	}
 	
+	/**
+	 * Cette méthode permet de changer de Panel, 
+	 * quelque soit le panel précedent/suivant
+	 * @param nouveauPanel JPanel
+	 */
 	public void changementPanel(JPanel nouveauPanel){
+		//On enleve celui en cours
 		vue.contentPane.remove(vue.contentPane.getComponent(0));
+		//on ajoute le nouveau
 		vue.contentPane.add(nouveauPanel);
 		vue.repaint();
 		vue.revalidate();
@@ -92,6 +127,8 @@ public class MainControl implements ActionListener/*, KeyListener*/{
 	
 	
 /*
+ *  //La suite est un projet d'écoute de la touche Entrée pour la page de connexion (sans succès)
+ * 
 	@Override
 	public void keyPressed(KeyEvent arg0) {
 		// TODO Auto-generated method stub

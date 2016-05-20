@@ -9,11 +9,6 @@ import java.util.Date;
  */
 public class Absence {
 
-	/**
-	 * 
-	 * Propriétés
-	 * 
-	 */
 	private int id;
 	private Date dateDebut;
 	private Date dateRetour;
@@ -72,7 +67,7 @@ public class Absence {
 	
 	/**
 	 * Mutateurs de l'attribut utilisateur
-	 * @param utilisateur Utilisateur
+	 * @param utilisateur {@link Utilisateur}
 	 */
 	public void setUtilisateur(Utilisateur utilisateur){
 		this.utilisateur=utilisateur;
@@ -128,7 +123,7 @@ public class Absence {
 	
 	/**
 	 * Accesseur de l'attribut utilisateur
-	 * @return Utilisateur - Attribut utilisateur
+	 * @return {@link Utilisateur} - Attribut utilisateur
 	 */
 	public Utilisateur getUtilisateur(){
 		return utilisateur;
@@ -149,13 +144,13 @@ public class Absence {
 	
 	/**
 	 * Constructeur de Absence avec tous les paramètres.
-	 * @param id
-	 * @param dateDebut
-	 * @param dateRetour
-	 * @param dateRetourHeure
-	 * @param dateretourMinute
-	 * @param motif
-	 * @param utilisateur
+	 * @param id int
+	 * @param dateDebut Date
+	 * @param dateRetour Date
+	 * @param dateRetourHeure int
+	 * @param dateretourMinute int
+	 * @param motif String
+	 * @param utilisateur {@link Utilisateur}
 	 */
 	public Absence(int id, Date dateDebut, Date dateRetour, int dateRetourHeure, int dateretourMinute, String motif, Utilisateur utilisateur){
 		this.id=id;
@@ -169,12 +164,12 @@ public class Absence {
 	
 	/**
 	 * Constructeur de Absence avec quelques paramètres, ceux utiisés pour l'insertion en BDD.
-	 * @param dateDebut
-	 * @param dateRetour
-	 * @param dateRetourHeure
-	 * @param dateRetourMinute
-	 * @param motif
-	 * @param utilisateur
+	 * @param dateDebut Date
+	 * @param dateRetour Date
+	 * @param dateRetourHeure int
+	 * @param dateRetourMinute int
+	 * @param motif String
+	 * @param utilisateur {@link Utilisateur}
 	 */
 	public Absence(Date dateDebut, Date dateRetour, int dateRetourHeure, int dateRetourMinute, String motif, Utilisateur utilisateur){
 		this.dateDebut=dateDebut;

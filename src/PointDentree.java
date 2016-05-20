@@ -5,8 +5,17 @@ import control.MainControl;
 import control.VisualiserAbsenceControl;
 import control.VisualiserRetardControl;
 
+/**
+ * Classe PointDentree, cette classe permet de lancer les controleurs ainsi que les vues et leurs liaisons
+ * @author Erwan
+ *
+ */
 public class PointDentree {
 
+	/**
+	 * Méthode main, première méthode appelée lors du lancement de l'application.
+	 * @param args String[]
+	 */
 	public static void main(String[] args) {
 		//Déclaration des contrôleurs
 		MainControl leControleur = new MainControl();

@@ -9,11 +9,6 @@ import java.util.Date;
  */
 public class Retard {
 
-	/**
-	 * 
-	 * Propriétés
-	 * 
-	 */
 	private int id;
 	private Date dater;
 	private int duree;
@@ -54,7 +49,7 @@ public class Retard {
 	
 	/**
 	 * Mutateurs de l'attribut utilisateur
-	 * @param utilisateur Utilisateur
+	 * @param utilisateur {@link Utilisateur}
 	 */
 	public void setUtilisateur(Utilisateur utilisateur){
 		this.utilisateur=utilisateur;
@@ -94,7 +89,7 @@ public class Retard {
 	
 	/**
 	 * Accesseur de l'attribut utilisateur
-	 * @return Utilisateur - Attribut utilisateur
+	 * @return {@link Utilisateur} - Attribut utilisateur
 	 */
 	public Utilisateur getUtilisateur(){
 		return utilisateur;
@@ -113,11 +108,11 @@ public class Retard {
 	
 	/**
 	 * Constructeur de Retard avec tous les paramètres.
-	 * @param id
-	 * @param dater
-	 * @param duree
-	 * @param motif
-	 * @param utilisateur
+	 * @param id int
+	 * @param dater Date
+	 * @param duree int
+	 * @param motif String
+	 * @param utilisateur {@link Utilisateur}
 	 */
 	public Retard(int id, Date dater, int duree, String motif, Utilisateur utilisateur){
 		this.id=id;
@@ -129,9 +124,9 @@ public class Retard {
 	
 	/**
 	 * Constructeur de Retard avec quelques paramètres, ceux utiisés pour l'insertion en BDD.
-	 * @param duree
-	 * @param motif
-	 * @param utilisateur
+	 * @param duree int
+	 * @param motif String
+	 * @param utilisateur {@link Utilisateur}
 	 */
 	public Retard(int duree, String motif, Utilisateur utilisateur){
 		this.duree=duree;

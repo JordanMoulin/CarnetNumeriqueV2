@@ -6,11 +6,7 @@ package object;
  *
  */
 public class Utilisateur {
-/**
- * 
- * Propriétés
- * 
- */
+
 	private String login;
 	private String nom;
 	private String prenom;
@@ -145,10 +141,22 @@ public class Utilisateur {
 	}
 	
 	/**
-	 * Méthode permetant de réinitialiser à zéro un objet Utilisateur
+	 * Méthode permettant de réinitialiser à zéro un objet Utilisateur
 	 * @return Utilisateur - Un nouvel objet Utilisateur vide
 	 */
 	public Utilisateur clean(){
 		return new Utilisateur();
+	}
+	
+	/**
+	 * Méthode permettant de déterminer si l'utilisateur est admin ou non
+	 * @return boolean - Résultat de la vérification
+	 */
+	public boolean isAdmin(){
+		//la catégorie 1 indique les administrateurs
+		if(this.categ==1){
+			return true;
+		}
+		return false;
 	}
 }

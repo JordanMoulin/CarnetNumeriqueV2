@@ -7,6 +7,11 @@ import object.Retard;
 import dataBase.RetardBD;
 import view.AtStart;
 
+/**
+ * Classe AjouterRetardControl, cette classe contrôle toutes les actions effectuées sur la vue AjouterRetard
+ * @author Erwan
+ *
+ */
 public class AjouterRetardControl implements ActionListener{
 
 	private MainControl controleurPrin;
@@ -14,6 +19,10 @@ public class AjouterRetardControl implements ActionListener{
 	private Retard oRetard;
 	private RetardBD oRetardBD;
 	
+	/**
+	 * Constructeur de la classe, permet quelques initialisations
+	 * @param leControleur {@link MainControl}
+	 */
 	public AjouterRetardControl(MainControl leControleur) {
 		this.controleurPrin=leControleur;
 		oRetardBD = new RetardBD();
@@ -21,23 +30,31 @@ public class AjouterRetardControl implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		//Lorsqu'on clic sur le bouton Valider
 		if(e.getSource() == vue.oAjoutRetard.btnValiderR){
+			//Si un des champs est vide, Affichage d'une erreur
 			if( vue.oAjoutRetard.minutesR.getValue()==0 ||
 				vue.oAjoutRetard.txtMotifR.getText().equals(""))
 			{
 				System.out.print("Votre ticket de retard est incomplet !");
 			}
+			//sinon création d'un objet Retard puis insertion de celui-ci en BDD
 			else{
 				oRetard = new Retard(vue.oAjoutRetard.minutesR.getValue(), vue.oAjoutRetard.txtMotifR.getText(), controleurPrin.oUser);
 				oRetardBD.insertRetard(controleurPrin.connect, oRetard);
 			}
 		}
+		//Lorsqu'on clic sur le bouton Nettoyer
 		else if(e.getSource()==vue.oAjoutRetard.btnNettoyerR){
 			vue.oAjoutRetard = vue.oAjoutRetard.clean();
 			controleurPrin.changementPanel(vue.oAjoutRetard);
 		}
 	}
 
+	/**
+	 * Méthode permettant de lier ce controleur à la vue AtStart
+	 * @param laVue {@link AtStart}
+	 */
 	public void lienVue(AtStart laVue){
 		this.vue=laVue;
 	}
