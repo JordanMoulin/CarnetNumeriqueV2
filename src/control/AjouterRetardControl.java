@@ -22,9 +22,14 @@ public class AjouterRetardControl implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == vue.oAjoutRetard.btnValiderR){
-			oRetard = new Retard(vue.oAjoutRetard.minutesR.getValue(), vue.oAjoutRetard.txtMotifR.getText(), controleurPrin.oUser);
-			oRetardBD.insertRetard(controleurPrin.connect, oRetard); //uniquement en local au lycee
-			System.out.print(true);
+			if( vue.oAjoutRetard.minutesR.getValue()==0 ||
+					vue.oAjoutRetard.txtMotifR.getText().equals("")){
+				System.out.print("Votre ticket de retard est incomplet !");
+			}
+			else{
+				oRetard = new Retard(vue.oAjoutRetard.minutesR.getValue(), vue.oAjoutRetard.txtMotifR.getText(), controleurPrin.oUser);
+				oRetardBD.insertRetard(controleurPrin.connect, oRetard);
+			}
 		}
 		else if(e.getSource()==vue.oAjoutRetard.btnNettoyerR){
 			vue.oAjoutRetard = vue.oAjoutRetard.clean();

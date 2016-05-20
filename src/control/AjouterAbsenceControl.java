@@ -25,9 +25,15 @@ public class AjouterAbsenceControl implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == vue.oAjoutAbsence.btnValiderA){
-			oAbsence = new Absence(vue.oAjoutAbsence.dateA.getDate(), vue.oAjoutAbsence.dateRetourA.getDate(), vue.oAjoutAbsence.heuresA.getValue(), vue.oAjoutAbsence.minutesA.getValue(), vue.oAjoutAbsence.txtMotifA.getText(), controleurPrin.oUser);
-			oAbsenceBD.insertAbsence(controleurPrin.connect, oAbsence); //uniquement en local au lycee
-			
+			if( vue.oAjoutAbsence.dateA.getDate()==null ||
+				vue.oAjoutAbsence.dateRetourA.getDate()==null ||
+				vue.oAjoutAbsence.txtMotifA.getText().equals("")){
+					System.out.print("Votre ticket d'absence est incomplet !");
+			}
+			else{
+				oAbsence = new Absence(vue.oAjoutAbsence.dateA.getDate(), vue.oAjoutAbsence.dateRetourA.getDate(), vue.oAjoutAbsence.heuresA.getValue(), vue.oAjoutAbsence.minutesA.getValue(), vue.oAjoutAbsence.txtMotifA.getText(), controleurPrin.oUser);
+				oAbsenceBD.insertAbsence(controleurPrin.connect, oAbsence);
+			}
 		}
 		else if(e.getSource()==vue.oAjoutAbsence.btnNettoyerA){
 			vue.oAjoutAbsence = vue.oAjoutAbsence.clean();

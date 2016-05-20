@@ -20,7 +20,7 @@ public class MainControl implements ActionListener/*, KeyListener*/{
 
 	private AtStart vue;
 	
-	public Connection connect = ConnexionPostgreSql.getInstance(); //uniquement en local au lycee
+	public Connection connect = ConnexionPostgreSql.getInstance();
 	private UtilisateurBD oUserBD;
 	public Utilisateur oUser;
 
@@ -29,13 +29,19 @@ public class MainControl implements ActionListener/*, KeyListener*/{
 		if(e.getSource()==vue.oConnexionView.btnConnexion){
 			oUserBD = new UtilisateurBD();
 			if(
-				oUserBD.verifUtilisateur(connect, vue.oConnexionView.login.getText(), vue.oConnexionView.password.getText())){  //uniquement en local au lycee
-				//vue.oConnexionView.login.getText().equals("admin") && vue.oConnexionView.password.getText().equals("admin")){
-				oUser = oUserBD.recupUtilisateur(connect, vue.oConnexionView.login.getText()); //uniquement en local au lycee
+				oUserBD.verifUtilisateur(connect, vue.oConnexionView.login.getText(), vue.oConnexionView.password.getText())){ 
+				oUser = oUserBD.recupUtilisateur(connect, vue.oConnexionView.login.getText()); 
 				vue.mnAbsence.setEnabled(true);
 				vue.mnRetard.setEnabled(true);
 				vue.mntmDeconnexion.setEnabled(true);
-				vue.lblPseudo.setText(oUser.getPrenom() + " " + oUser.getNom()); //uniquement en local au lycee
+				if(oUser.getCateg()==1){
+					vue.retardAjouter.setVisible(false);
+					vue.absenceAjouter.setVisible(false);
+					vue.absenceVisualiser.setText("Visualiser tous les élèves");
+					vue.retardVisualiser.setText("Visualiser tous les élèves");
+				}
+				vue.lblPseudo.setText(oUser.getPrenom().replaceFirst(".",(oUser.getPrenom().charAt(0)+"").toUpperCase()) + " " + oUser.getNom().toUpperCase());
+				
 				changementPanel(vue.oEmpty);
 			}
 			else{
