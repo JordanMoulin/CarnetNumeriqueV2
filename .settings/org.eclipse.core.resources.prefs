@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+encoding//src/PointDentree.java=UTF-8
+encoding//src/control/AjouterAbsenceControl.java=UTF-8
+encoding//src/control/AjouterRetardControl.java=UTF-8
+encoding//src/control/MainControl.java=UTF-8
+encoding//src/control/VisualiserAbsenceControl.java=UTF-8
+encoding//src/control/VisualiserRetardControl.java=UTF-8
+encoding//src/dataBase/AbsenceBD.java=UTF-8
+encoding//src/dataBase/ConnexionPostgreSql.java=UTF-8
+encoding//src/dataBase/RetardBD.java=UTF-8
+encoding//src/dataBase/UtilisateurBD.java=UTF-8
+encoding//src/object/Absence.java=UTF-8
+encoding//src/object/Retard.java=UTF-8
+encoding//src/object/Utilisateur.java=UTF-8

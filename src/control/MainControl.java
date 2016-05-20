@@ -2,17 +2,13 @@ package control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.sql.Connection;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import object.Utilisateur;
-import dataBase.AbsenceBD;
 import dataBase.ConnexionPostgreSql;
-import dataBase.RetardBD;
 import dataBase.UtilisateurBD;
 import view.AtStart;
 
@@ -37,8 +33,8 @@ public class MainControl implements ActionListener/*, KeyListener*/{
 				if(oUser.getCateg()==1){
 					vue.retardAjouter.setVisible(false);
 					vue.absenceAjouter.setVisible(false);
-					vue.absenceVisualiser.setText("Visualiser tous les élèves");
-					vue.retardVisualiser.setText("Visualiser tous les élèves");
+					vue.absenceVisualiser.setText("Visualiser tous les Ã©lÃ¨ves");
+					vue.retardVisualiser.setText("Visualiser tous les Ã©lÃ¨ves");
 				}
 				vue.lblPseudo.setText(oUser.getPrenom().replaceFirst(".",(oUser.getPrenom().charAt(0)+"").toUpperCase()) + " " + oUser.getNom().toUpperCase());
 				
@@ -77,7 +73,7 @@ public class MainControl implements ActionListener/*, KeyListener*/{
 			vue.mntmDeconnexion.setEnabled(false);
 			vue.oConnexionView = vue.oConnexionView.clean();
 			vue.lblPseudo.setText("");
-			//oUser = oUser.clean(); //uniquement en local au lycee
+			oUser = oUser.clean();
 			changementPanel(vue.oConnexionView);
 		}
 	}

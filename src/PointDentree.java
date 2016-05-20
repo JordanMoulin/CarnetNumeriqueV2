@@ -8,17 +8,17 @@ import control.VisualiserRetardControl;
 public class PointDentree {
 
 	public static void main(String[] args) {
-		//Déclaration des contrôleurs
+		//DÃ©claration des contrÃ´leurs
 		MainControl leControleur = new MainControl();
 		AjouterRetardControl leControlAjoutRetard = new AjouterRetardControl(leControleur);
 		AjouterAbsenceControl leControlAjoutAbsence = new AjouterAbsenceControl(leControleur);
 		VisualiserRetardControl leControlVisuaRetard = new VisualiserRetardControl();
 		VisualiserAbsenceControl leControlVisuaAbsence = new VisualiserAbsenceControl();
 		
-		//Déclaration de l'interface graphique
+		//DÃ©claration de l'interface graphique
 		AtStart interfaceGraph = new AtStart(leControleur,leControlAjoutRetard,leControlAjoutAbsence,leControlVisuaRetard,leControlVisuaAbsence);
 		
-		//liaison entre Vue et Contrôleur
+		//liaison entre Vue et ContrÃ´leur
 		leControleur.lienVue(interfaceGraph);
 		leControlAjoutRetard.lienVue(interfaceGraph);
 		leControlAjoutAbsence.lienVue(interfaceGraph);
