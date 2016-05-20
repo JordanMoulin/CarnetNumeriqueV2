@@ -23,7 +23,8 @@ public class AjouterRetardControl implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == vue.oAjoutRetard.btnValiderR){
 			if( vue.oAjoutRetard.minutesR.getValue()==0 ||
-				vue.oAjoutRetard.txtMotifR.getText().equals("")){
+				vue.oAjoutRetard.txtMotifR.getText().equals(""))
+			{
 				System.out.print("Votre ticket de retard est incomplet !");
 			}
 			else{

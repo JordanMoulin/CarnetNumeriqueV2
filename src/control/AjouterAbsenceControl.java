@@ -2,8 +2,6 @@ package control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.DateFormat;
-import java.util.Locale;
 
 import object.Absence;
 import dataBase.AbsenceBD;
@@ -27,8 +25,9 @@ public class AjouterAbsenceControl implements ActionListener{
 		if(e.getSource() == vue.oAjoutAbsence.btnValiderA){
 			if( vue.oAjoutAbsence.dateA.getDate()==null ||
 				vue.oAjoutAbsence.dateRetourA.getDate()==null ||
-				vue.oAjoutAbsence.txtMotifA.getText().equals("")){
-					System.out.print("Votre ticket d'absence est incomplet !");
+				vue.oAjoutAbsence.txtMotifA.getText().equals(""))
+			{
+				System.out.print("Votre ticket d'absence est incomplet !");
 			}
 			else{
 				oAbsence = new Absence(vue.oAjoutAbsence.dateA.getDate(), vue.oAjoutAbsence.dateRetourA.getDate(), vue.oAjoutAbsence.heuresA.getValue(), vue.oAjoutAbsence.minutesA.getValue(), vue.oAjoutAbsence.txtMotifA.getText(), controleurPrin.oUser);
