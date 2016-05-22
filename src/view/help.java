@@ -23,7 +23,7 @@ public class Help extends JPanel {
 	public JButton btnHelp2;
 	public JButton btnHelp3;
 	public JButton btnHelp4;
-	public JButton btnRetour;
+	public JButton btnRetourH;
 	
 	/**
 	 * Construction du Panel
@@ -62,9 +62,9 @@ public class Help extends JPanel {
 		add(btnHelp4);
 		btnHelp4.addActionListener(monControleur);
 		
-		btnRetour = new JButton("Retour");
-		btnRetour.setBounds(341, 196, 89, 23);
-		add(btnRetour);
-		btnRetour.addActionListener(monControleur);
+		btnRetourH = new JButton("Retour");
+		btnRetourH.setBounds(341, 196, 89, 23);
+		add(btnRetourH);
+		btnRetourH.addActionListener(monControleur);
 	}
 }

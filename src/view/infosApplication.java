@@ -1,7 +1,11 @@
 package view;
 
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
+
+import control.HelpControl;
+
 import java.awt.Font;
 
 /**
@@ -12,11 +16,15 @@ import java.awt.Font;
 public class InfosApplication extends JPanel {
 
 	private static final long serialVersionUID = 1L;
+	protected HelpControl monControleur;
+	
+	public JButton btnRetourI;
 
 	/**
 	 * Construction du Panel
 	 */
-	public InfosApplication() {
+	public InfosApplication(HelpControl unControleur) {
+		this.monControleur=unControleur;
 		setLayout(null);
 		
 		JTextPane txtpnFdfdf = new JTextPane();
@@ -25,7 +33,11 @@ public class InfosApplication extends JPanel {
 		txtpnFdfdf.setBounds(10, 114, 430, 43);
 		txtpnFdfdf.setEditable(false);
 		add(txtpnFdfdf);
-
+		
+		btnRetourI = new JButton("Retour");
+		btnRetourI.setBounds(341, 196, 89, 23);
+		add(btnRetourI);
+		btnRetourI.addActionListener(monControleur);
 	}
 
 }

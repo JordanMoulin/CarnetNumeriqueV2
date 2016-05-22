@@ -86,7 +86,7 @@ public class AtStart extends JFrame {
 		oVisuaAbsence = new VisualiserAbsence(controlVisuaAbsence);
 		oVisuaRetard = new VisualiserRetard(controlVisuaRetard);
 		oHelp = new Help(controlHelp);
-		oInfosAppli = new InfosApplication();
+		oInfosAppli = new InfosApplication(controlHelp);
 		oHelpConnexion = new HelpConnexion(controlHelp);
 		oHelpAbsence = new HelpAbsence(controlHelp);
 		oHelpRetard = new HelpRetard(controlHelp);
