@@ -11,7 +11,7 @@ import java.awt.Font;
 import javax.swing.JButton;
 
 /**
- * Classe HelpRetard, est une JPanel qui affiche les différentes aides pour cette application.
+ * Classe HelpRetard, est une JPanel qui affiche les diffÃ©rentes aides pour cette application.
  * @author Jordan
  *
  */

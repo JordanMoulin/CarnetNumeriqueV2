@@ -15,7 +15,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 /**
- * Classe AjouterAbsence, est une JPanel qui affiche la page des tickets � ajouter
+ * Classe AjouterAbsence, est une JPanel qui affiche la page des tickets à ajouter
  * @author Jordan
  *
  */
@@ -47,7 +47,7 @@ public class AjouterAbsence extends JPanel {
 		lblAbsentLe.setBounds(23, 11, 87, 14);
 		add(lblAbsentLe);
 		
-		JLabel lblRentre = new JLabel("Rentr\u00E9(e) le :");
+		JLabel lblRentre = new JLabel("Rentré(e) le :");
 		lblRentre.setBounds(25, 56, 96, 14);
 		add(lblRentre);
 		
@@ -68,7 +68,7 @@ public class AjouterAbsence extends JPanel {
 		minutesA.setBounds(159, 97, 40, 20);
 		add(minutesA);
 		
-		JLabel lblHeure = new JLabel("\u00E0");
+		JLabel lblHeure = new JLabel("à");
 		lblHeure.setHorizontalAlignment(SwingConstants.CENTER);
 		lblHeure.setBounds(10, 97, 89, 14);
 		add(lblHeure);
@@ -94,7 +94,7 @@ public class AjouterAbsence extends JPanel {
 		btnNettoyerA.addActionListener(monControleur);
 	}
 
-	 /** M�thode qui permet de nettoyer l'objet
+	 /** Méthode qui permet de nettoyer l'objet
 	 * @return {@link AjouterAbsence} - Un nouvel objet AjouterAbsence
 	 */
 	public AjouterAbsence clean(){

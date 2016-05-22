@@ -9,7 +9,7 @@ import java.awt.Font;
 import javax.swing.JButton;
 
 /**
- * Classe HelpVisualiser, est une JPanel qui affiche les différentes aides pour cette application.
+ * Classe HelpVisualiser, est une JPanel qui affiche les diffÃ©rentes aides pour cette application.
  * @author Jordan
  *
  */

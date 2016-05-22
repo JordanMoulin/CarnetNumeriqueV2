@@ -22,6 +22,7 @@ public class InfosApplication extends JPanel {
 
 	/**
 	 * Construction du Panel
+	 * @param unControleur - {@link HelpControl}
 	 */
 	public InfosApplication(HelpControl unControleur) {
 		this.monControleur=unControleur;

@@ -12,7 +12,7 @@ import control.HelpControl;
 import javax.swing.JButton;
 
 /**
- * Classe HelpAbsence, est une JPanel qui affiche les différentes aides pour cette application.
+ * Classe HelpAbsence, est une JPanel qui affiche les diffÃ©rentes aides pour cette application.
  * @author Jordan
  *
  */

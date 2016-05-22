@@ -12,7 +12,7 @@ import javax.swing.JButton;
 import control.HelpControl;
 
 /**
- * Classe HelpConnexion, est une JPanel qui affiche les différentes aides pour cette application.
+ * Classe HelpConnexion, est une JPanel qui affiche les diffÃ©rentes aides pour cette application.
  * @author Jordan
  *
  */
