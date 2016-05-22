@@ -57,6 +57,7 @@ public class MainControl implements ActionListener/*, KeyListener*/{
 				
 				//affichage de son Prenom NOM en haut à droite
 				vue.lblPseudo.setText(" " + oUser.getPrenom().replaceFirst(".",(oUser.getPrenom().charAt(0)+"").toUpperCase()) + " " + oUser.getNom().toUpperCase() + " ");
+				vue.oEmpty.lblBienvenue.setText("Bienvenue "+vue.lblPseudo.getText()+".");
 				
 				//on enleve la page de connexion
 				changementPanel(vue.oEmpty);

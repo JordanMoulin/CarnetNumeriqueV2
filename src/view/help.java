@@ -22,6 +22,8 @@ public class Help extends JPanel {
 	public JButton btnHelp2;
 	public JButton btnHelp3;
 	public JButton btnHelp4;
+	public JButton btnRetour;
+	
 	/**
 	 * Create the panel.
 	 */
@@ -57,6 +59,10 @@ public class Help extends JPanel {
 		btnHelp4.setBounds(41, 168, 259, 23);
 		add(btnHelp4);
 		btnHelp4.addActionListener(monControleur);
-
+		
+		btnRetour = new JButton("Retour");
+		btnRetour.setBounds(341, 196, 89, 23);
+		add(btnRetour);
+		btnRetour.addActionListener(monControleur);
 	}
 }

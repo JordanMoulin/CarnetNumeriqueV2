@@ -28,6 +28,14 @@ public class HelpControl implements ActionListener {
 		else if(e.getSource()== vue.oHelp.btnHelp4){
 			controleurPrin.changementPanel(vue.oHelpVisualiser);
 		}
+		else if(e.getSource()==vue.oHelp.btnRetour){
+			if(vue.lblPseudo.getText()!=""){
+				controleurPrin.changementPanel(vue.oEmpty);
+			}
+			else{
+				controleurPrin.changementPanel(vue.oConnexionView);
+			}
+		}
 		else if(e.getSource()== vue.oHelpConnexion.btnRetourC){
 			controleurPrin.changementPanel(vue.oHelp);
 		}
