@@ -9,7 +9,6 @@ import javax.swing.JLabel;
 import com.toedter.components.JSpinField;
 
 import control.AjouterAbsenceControl;
-import control.AjouterRetardControl;
 
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
