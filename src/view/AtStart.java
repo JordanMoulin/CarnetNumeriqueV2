@@ -27,10 +27,9 @@ public class AtStart extends JFrame {
 	protected MainControl monControleur;
 	protected AjouterRetardControl controlAjoutRetard;
 	protected AjouterAbsenceControl controlAjoutAbsence;
-	protected VisualiserRetardControl controlVisuaRetard;
-	protected VisualiserAbsenceControl controlVisuaAbsence;
 	protected HelpControl controlHelp;
-	
+	public VisualiserRetardControl controlVisuaRetard;
+	public VisualiserAbsenceControl controlVisuaAbsence;
 	public JPanel contentPane;
 	public ConnexionView oConnexionView;
 	public AjouterRetard oAjoutRetard;

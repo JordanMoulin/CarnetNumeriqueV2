@@ -12,3 +12,5 @@ encoding//src/dataBase/UtilisateurBD.java=UTF-8
 encoding//src/object/Absence.java=UTF-8
 encoding//src/object/Retard.java=UTF-8
 encoding//src/object/Utilisateur.java=UTF-8
+encoding//src/view/VisualiserAbsence.java=UTF-8
+encoding//src/view/VisualiserRetard.java=UTF-8

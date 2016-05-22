@@ -1,5 +1,6 @@
 package object;
 
+import java.text.DateFormat;
 import java.util.Date;
 
 /**
@@ -83,34 +84,36 @@ public class Absence {
 	
 	/**
 	 * Accesseur de l'attribut dateDebut
-	 * @return Date - Attribut dateDebut
+	 * @return String - Attribut dateDebut au format jj/mm/yy
 	 */
-	public Date getDateDebut(){
-		return dateDebut;
+	public String getDateDebut(){
+		DateFormat date = DateFormat.getDateInstance(DateFormat.SHORT);
+		return date.format(dateDebut);
 	}
 	
 	/**
 	 * Accesseur de l'attribut dateRetour
-	 * @return Date - Attribut dateRetour
+	 * @return String - Attribut dateRetour au format jj/mm/yy
 	 */
-	public Date getDateRetour(){
-		return dateRetour;
+	public String getDateRetour(){
+		DateFormat date = DateFormat.getDateInstance(DateFormat.SHORT);
+		return date.format(dateRetour);
 	}
 	
 	/**
 	 * Accesseur de l'attribut dateRetourHeure
-	 * @return int - Attribut dateRetourHeure
+	 * @return String - Attribut dateRetourHeure
 	 */
-	public int getDateRetourHeure(){
-		return dateRetourHeure;
+	public String getDateRetourHeure(){
+		return dateRetourHeure < 10 ? "0" + dateRetourHeure : "" + dateRetourHeure;
 	}
 	
 	/**
 	 * Accesseur de l'attribut dateRetourMinute
-	 * @return int - Attribut dateRetourMinute
+	 * @return String - Attribut dateRetourMinute
 	 */
-	public int getDateRetourMinute(){
-		return dateRetourMinute;
+	public String getDateRetourMinute(){
+		return dateRetourMinute < 10 ? "0" + dateRetourMinute : "" + dateRetourMinute;
 	}
 	
 	/** 

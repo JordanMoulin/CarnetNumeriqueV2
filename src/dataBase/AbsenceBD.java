@@ -36,9 +36,9 @@ public class AbsenceBD {
 											+ "dateretourheure, "
 											+ "dateretourminute, "
 											+ "trim(motif) as motif "
-											+ "from ppe4.retard where idutilisateur=" 
+											+ "from ppe4.absence where idutilisateur='" 
 											+ utilisateur.getLogin() 
-											+ ";";
+											+ "';";
 			
 			//Requête SQL pour un admin
 			String QUERY_SELECT_ALL_ADMIN = "select id, "
@@ -48,7 +48,7 @@ public class AbsenceBD {
 											+ "dateretourminute, "
 											+ "trim(motif) as motif, "
 											+ "trim(idutilisateur) as idutilisateur "
-											+ "from ppe4.retard;";
+											+ "from ppe4.absence;";
 
 			Statement maRequete = maConnection.createStatement();
 			

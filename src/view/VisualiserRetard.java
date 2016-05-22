@@ -1,37 +1,72 @@
 package view;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTable;
 
 import control.VisualiserRetardControl;
+
 import javax.swing.JButton;
 
+/**
+ * Classe VisualiserRetard, est une JPanel qui affiche les éléments lorsqu'on veut visualiser les retard
+ * @author Erwan
+ * @author Jordan
+ *
+ */
 public class VisualiserRetard extends JPanel {
 
-	/**
-	 * 
-	 */
 	protected VisualiserRetardControl monControleur;
 	private static final long serialVersionUID = 1L;
-	public JTable tableR;
+	public JLabel id;
+	public JLabel dater;
+	public JLabel duree;
+	public JLabel motif;
+	public JLabel login;
+	public JLabel nombre;
 	public JButton btnTrierR;
 
 	/**
-	 * Create the panel.
+	 * Construction du Panel
+	 * @param unControleur {@link VisualiserRetardControl}
 	 */
 	public VisualiserRetard(VisualiserRetardControl unControleur) {
 		setLayout(null);
 		this.monControleur=unControleur;
-		tableR = new JTable();
-		tableR.setBounds(85, 64, 182, 100);
-		add(tableR);
+
+		id = new JLabel();
+		id.setText("ID");
+		add(id);
 		
-		btnTrierR = new JButton("Trier");
-		btnTrierR.setBounds(10, 11, 89, 23);
+		dater = new JLabel();
+		dater.setText("Date");
+		add(dater);
+
+		duree = new JLabel();
+		duree.setText("Durée");
+		add(duree);
+		
+		motif = new JLabel();
+		motif.setText("Motif");
+		add(motif);
+
+		login = new JLabel();
+		login.setText("Elève");
+		add(login);
+		
+		nombre = new JLabel();
+		nombre.setBounds(150, 10, 150, 23);
+		add(nombre);
+		
+		btnTrierR = new JButton("Filtrer par nom");
+		btnTrierR.setBounds(310, 11, 120, 23);
 		add(btnTrierR);
 		btnTrierR.addActionListener(monControleur);
 	}
-	
+
+	/**
+	 * Méthode qui permet de nettoyer l'objet
+	 * @return {@link VisualiserRetard} - Un nouvel objet VisualiserRetard
+	 */
 	public VisualiserRetard clean(){
 		return new VisualiserRetard(monControleur);
 	}

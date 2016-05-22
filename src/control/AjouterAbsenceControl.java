@@ -3,6 +3,8 @@ package control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
+
 import object.Absence;
 import dataBase.AbsenceBD;
 import view.AtStart;
@@ -10,6 +12,7 @@ import view.AtStart;
 /**
  * Classe AjouterAbsenceControl, cette classe contrôle toutes les actions effectuées sur la vue AjouterAbsence
  * @author Erwan
+ * @author Jordan
  *
  */
 public class AjouterAbsenceControl implements ActionListener{
@@ -38,12 +41,13 @@ public class AjouterAbsenceControl implements ActionListener{
 				vue.oAjoutAbsence.dateRetourA.getDate()==null ||
 				vue.oAjoutAbsence.txtMotifA.getText().equals(""))
 			{
-				System.out.print("Votre ticket d'absence est incomplet !");
+				JOptionPane.showMessageDialog(vue.oAjoutAbsence, "Votre ticket d'absence est incomplet !");
 			}
 			//sinon création d'un objet Retard puis insertion de celui-ci en BDD
 			else{
 				oAbsence = new Absence(vue.oAjoutAbsence.dateA.getDate(), vue.oAjoutAbsence.dateRetourA.getDate(), vue.oAjoutAbsence.heuresA.getValue(), vue.oAjoutAbsence.minutesA.getValue(), vue.oAjoutAbsence.txtMotifA.getText(), controleurPrin.oUser);
 				oAbsenceBD.insertAbsence(controleurPrin.connect, oAbsence);
+				JOptionPane.showMessageDialog(vue.oAjoutAbsence, "Votre ticket d'absence a été ajouté !");
 			}
 		}
 		//Lorsqu'on clic sur le bouton Nettoyer
