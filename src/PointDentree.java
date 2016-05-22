@@ -8,6 +8,7 @@ import control.VisualiserRetardControl;
 /**
  * Classe PointDentree, cette classe permet de lancer les controleurs ainsi que les vues et leurs liaisons
  * @author Erwan
+ * @author Jordan
  *
  */
 public class PointDentree {
@@ -31,6 +32,8 @@ public class PointDentree {
 		leControleur.lienVue(interfaceGraph);
 		leControlAjoutRetard.lienVue(interfaceGraph);
 		leControlAjoutAbsence.lienVue(interfaceGraph);
+		leControlVisuaRetard.lienVue(interfaceGraph);
+		leControlVisuaAbsence.lienVue(interfaceGraph);
 		
 		//lancement de l'appli
 		interfaceGraph.setVisible(true);

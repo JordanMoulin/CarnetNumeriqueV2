@@ -10,6 +10,7 @@ import view.AtStart;
 /**
  * Classe AjouterRetardControl, cette classe contrôle toutes les actions effectuées sur la vue AjouterRetard
  * @author Erwan
+ * @author Jordan
  *
  */
 public class AjouterRetardControl implements ActionListener{

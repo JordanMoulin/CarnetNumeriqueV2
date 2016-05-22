@@ -1,5 +1,6 @@
 package object;
 
+import java.text.DateFormat;
 import java.util.Date;
 
 /**
@@ -65,10 +66,11 @@ public class Retard {
 	
 	/**
 	 * Accesseur de l'attribut dater
-	 * @return Date - Attribut dater
+	 * @return String - Attribut dater au format jj/mm/yy
 	 */
-	public Date getDater(){
-		return dater;
+	public String getDater(){
+		DateFormat date = DateFormat.getDateInstance(DateFormat.SHORT);
+		return date.format(dater);
 	}
 	
 	/**

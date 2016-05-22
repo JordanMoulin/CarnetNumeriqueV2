@@ -10,6 +10,7 @@ import view.AtStart;
 /**
  * Classe AjouterAbsenceControl, cette classe contrôle toutes les actions effectuées sur la vue AjouterAbsence
  * @author Erwan
+ * @author Jordan
  *
  */
 public class AjouterAbsenceControl implements ActionListener{

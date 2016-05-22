@@ -16,6 +16,7 @@ import view.AtStart;
  * Classe MainControl, cette classe contrôle toutes les actions effectuées sur les vues AtStart, ConnexionView et Empty
  * On contrôle aussi les changements de Panel depuis ce contrôleur
  * @author Erwan
+ * @author Jordan
  *
  */
 public class MainControl implements ActionListener/*, KeyListener*/{
@@ -47,6 +48,12 @@ public class MainControl implements ActionListener/*, KeyListener*/{
 					vue.absenceAjouter.setVisible(false);
 					vue.absenceVisualiser.setText("Visualiser pour tous les élèves");
 					vue.retardVisualiser.setText("Visualiser pour tous les élèves");
+				}else{
+					vue.retardAjouter.setVisible(true);
+					vue.absenceAjouter.setVisible(true);
+					vue.absenceVisualiser.setText("Visualiser");
+					vue.retardVisualiser.setText("Visualiser");
+					
 				}
 				
 				//affichage de son Prenom NOM en haut à droite
@@ -76,11 +83,15 @@ public class MainControl implements ActionListener/*, KeyListener*/{
 		else if(e.getSource()==vue.absenceVisualiser){
 			vue.oVisuaAbsence = vue.oVisuaAbsence.clean();
 			changementPanel(vue.oVisuaAbsence);
+			//construction du tableau des tickets
+			vue.controlVisuaAbsence.appelTableau(this);
 		}
 		//Lorsqu'on clic sur le bouton Visualiser du menu Retard
 		else if(e.getSource()==vue.retardVisualiser){
 			vue.oVisuaRetard = vue.oVisuaRetard.clean();
 			changementPanel(vue.oVisuaRetard);
+			//construction du tableau des tickets
+			vue.controlVisuaRetard.appelTableau(this);
 		}
 		//Lorsqu'on clic sur le bouton Aide du menu ?
 		else if(e.getSource()==vue.mntmAide){
@@ -95,6 +106,7 @@ public class MainControl implements ActionListener/*, KeyListener*/{
 			vue.mnAbsence.setEnabled(false);
 			vue.mnRetard.setEnabled(false);
 			vue.mntmDeconnexion.setEnabled(false);
+			//nettoyages...
 			vue.oConnexionView = vue.oConnexionView.clean();
 			vue.lblPseudo.setText("");
 			oUser = oUser.clean();

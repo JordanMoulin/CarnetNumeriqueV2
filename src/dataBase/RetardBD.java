@@ -35,9 +35,9 @@ public class RetardBD {
 											+ "dater, "
 											+ "duree, "
 											+ "trim(motif) as motif "
-											+ "from ppe4.retard where idUtilisateur=" 
+											+ "from ppe4.retard where idutilisateur='" 
 											+ utilisateur.getLogin() 
-											+ ";";
+											+ "';";
 			
 			//Requête SQL pour un admin
 			String QUERY_SELECT_ALL_ADMIN = "select id, "
