@@ -3,6 +3,8 @@ package control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
+
 import object.Retard;
 import dataBase.RetardBD;
 import view.AtStart;
@@ -37,12 +39,13 @@ public class AjouterRetardControl implements ActionListener{
 			if( vue.oAjoutRetard.minutesR.getValue()==0 ||
 				vue.oAjoutRetard.txtMotifR.getText().equals(""))
 			{
-				System.out.print("Votre ticket de retard est incomplet !");
+				JOptionPane.showMessageDialog(vue.oAjoutRetard, "Votre ticket de retard est incomplet !");
 			}
 			//sinon création d'un objet Retard puis insertion de celui-ci en BDD
 			else{
 				oRetard = new Retard(vue.oAjoutRetard.minutesR.getValue(), vue.oAjoutRetard.txtMotifR.getText(), controleurPrin.oUser);
 				oRetardBD.insertRetard(controleurPrin.connect, oRetard);
+				JOptionPane.showMessageDialog(vue.oAjoutRetard, "Votre ticket de retard a été ajouté !");
 			}
 		}
 		//Lorsqu'on clic sur le bouton Nettoyer
