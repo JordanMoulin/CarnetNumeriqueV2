@@ -33,7 +33,7 @@ public class HelpAbsence extends JPanel {
 		JTextPane txtpnAjouterUneAbsence = new JTextPane();
 		txtpnAjouterUneAbsence.setEditable(false);
 		txtpnAjouterUneAbsence.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		txtpnAjouterUneAbsence.setText("Ajouter une absence :\r\n\r\n    - Cliquez sur l'onglet Absence en \r\n       haut \u00E0 gauche.\r\n    - Puis cliquer sur \"Ajouter\"\r\n    - Rentrez les informations voulu : \r\n        - pour les deux champs de date \r\n           cliquez sur l'ic\u00F4ne de calendrier \r\n           et choisissez une date.\r\n        - pour le temps, cliquez sur les \r\n           fl\u00E8ches pour choisir les heures \r\n           et minutes voulus.\r\n    - Cliquez sur Valider");
+		txtpnAjouterUneAbsence.setText("Ajouter une absence :\r\n\r\n    - Cliquez sur l'onglet \"Absence\" en \r\n       haut à gauche.\r\n    - Puis cliquer sur \"Ajouter\"\r\n    - Entrez les informations voulu : \r\n        - pour les deux champs de date \r\n           cliquez sur l'icône de calendrier \r\n           et choisissez une date.\r\n        - pour le temps, cliquez sur les \r\n           flèches pour choisir les heures \r\n           et minutes voulus.\r\n    - Cliquez sur Valider");
 		txtpnAjouterUneAbsence.setBounds(10, 11, 223, 208);
 		add(txtpnAjouterUneAbsence);
 		

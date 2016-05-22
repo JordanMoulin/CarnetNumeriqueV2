@@ -32,7 +32,7 @@ public class HelpConnexion extends JPanel {
 		
 		JTextPane txtpnCommentSeConnecter = new JTextPane();
 		txtpnCommentSeConnecter.setEditable(false);
-		txtpnCommentSeConnecter.setText("Comment se connecter :\r\n\r\n     - Vous devez rentrer votre login \r\n        qui est compos\u00E9 de la premi\u00E8re \r\n        lettre de votre pr\u00E9nom suivi de \r\n        votre nom de famille.\r\n     - Le mot de passe vous a \u00E9tais \r\n        communiquer et il n'est pas \r\n        possible de le changer.\r\n-----------------------------------\r\nComment se d\u00E9connecter :\r\n\r\n     - Cliquer sur le bouton deconnexion en haut.\r\n");
+		txtpnCommentSeConnecter.setText("Comment se connecter :\r\n\r\n     - Vous devez entrer votre login \r\n        qui est composé de la première \r\n        lettre de votre prénom suivi de \r\n        votre nom de famille.\r\n     - Le mot de passe vous a été \r\n        communiqué et il n'est pas \r\n        possible de le changer.\r\n-----------------------------------\r\nComment se déconnecter :\r\n\r\n     - Cliquez sur le bouton déconnexion en haut.\r\n");
 		txtpnCommentSeConnecter.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		txtpnCommentSeConnecter.setBounds(10, 11, 223, 216);
 		add(txtpnCommentSeConnecter);

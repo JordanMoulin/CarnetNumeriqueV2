@@ -30,8 +30,11 @@ public class InfosApplication extends JPanel {
 		
 		JTextPane txtpnFdfdf = new JTextPane();
 		txtpnFdfdf.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		txtpnFdfdf.setText("Cette application a été réalisée par Erwan Agnelet & Jordan Moulin en deuxième année de BTS SIO au lycée André Malraux à Allonnes 72700.\r\n");
-		txtpnFdfdf.setBounds(10, 114, 430, 43);
+		txtpnFdfdf.setText("    Dans le cadre PPE4, cette application a été réalisée par Erwan Agnelet & Jordan Moulin en deuxième année de BTS SIO au lycée André Malraux à Allonnes 72700.\r\n\r\n"
+				+ "    Dépot Github : github.com/JordanMoulin/CarnetNumeriqueV2\r\n\r\n"
+				+ "    Adresse de contact : erwan.agnelet@bts-malraux.net\r\n"
+				+ "                                  jordan.moulin@bts-malraux.net");
+		txtpnFdfdf.setBounds(10, 14, 410, 173);
 		txtpnFdfdf.setEditable(false);
 		add(txtpnFdfdf);
 		
