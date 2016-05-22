@@ -1,6 +1,7 @@
 import view.AtStart;
 import control.AjouterAbsenceControl;
 import control.AjouterRetardControl;
+import control.HelpControl;
 import control.MainControl;
 import control.VisualiserAbsenceControl;
 import control.VisualiserRetardControl;
@@ -23,14 +24,16 @@ public class PointDentree {
 		AjouterAbsenceControl leControlAjoutAbsence = new AjouterAbsenceControl(leControleur);
 		VisualiserRetardControl leControlVisuaRetard = new VisualiserRetardControl();
 		VisualiserAbsenceControl leControlVisuaAbsence = new VisualiserAbsenceControl();
+		HelpControl leControlHelp = new HelpControl(leControleur);
 		
 		//Déclaration de l'interface graphique
-		AtStart interfaceGraph = new AtStart(leControleur,leControlAjoutRetard,leControlAjoutAbsence,leControlVisuaRetard,leControlVisuaAbsence);
+		AtStart interfaceGraph = new AtStart(leControleur,leControlAjoutRetard,leControlAjoutAbsence,leControlVisuaRetard,leControlVisuaAbsence,leControlHelp);
 		
 		//liaison entre Vue et Contrôleur
 		leControleur.lienVue(interfaceGraph);
 		leControlAjoutRetard.lienVue(interfaceGraph);
 		leControlAjoutAbsence.lienVue(interfaceGraph);
+		leControlHelp.lienVue(interfaceGraph);
 		
 		//lancement de l'appli
 		interfaceGraph.setVisible(true);

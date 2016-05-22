@@ -5,8 +5,6 @@ import javax.swing.JTable;
 
 import control.VisualiserAbsenceControl;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class VisualiserAbsence extends JPanel {
 

@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import object.Utilisateur;
@@ -122,7 +121,6 @@ public class MainControl implements ActionListener/*, KeyListener*/{
 		vue.contentPane.add(nouveauPanel);
 		vue.repaint();
 		vue.revalidate();
-		
 	}
 	
 	

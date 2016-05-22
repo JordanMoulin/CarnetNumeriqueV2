@@ -58,7 +58,7 @@ public class ConnexionView extends JPanel {
 		lblErreur.setHorizontalAlignment(SwingConstants.CENTER);
 		lblErreur.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblErreur.setForeground(Color.RED);
-		lblErreur.setBounds(153, 193, 114, 14);
+		lblErreur.setBounds(79, 193, 265, 23);
 		add(lblErreur);
 		lblErreur.setVisible(false);
 	}

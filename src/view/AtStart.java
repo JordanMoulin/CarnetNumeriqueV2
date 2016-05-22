@@ -12,6 +12,11 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JLabel;
 
+import view.helps.HelpAbsence;
+import view.helps.HelpConnexion;
+import view.helps.HelpRetard;
+import view.helps.HelpVisualiser;
+
 public class AtStart extends JFrame {
 
 	/**
@@ -24,6 +29,8 @@ public class AtStart extends JFrame {
 	protected AjouterAbsenceControl controlAjoutAbsence;
 	protected VisualiserRetardControl controlVisuaRetard;
 	protected VisualiserAbsenceControl controlVisuaAbsence;
+	protected HelpControl controlHelp;
+	
 	public JPanel contentPane;
 	public ConnexionView oConnexionView;
 	public AjouterRetard oAjoutRetard;
@@ -33,6 +40,10 @@ public class AtStart extends JFrame {
 	public VisualiserRetard oVisuaRetard;
 	public Help oHelp;
 	public InfosApplication oInfosAppli;
+	public HelpConnexion oHelpConnexion;
+	public HelpAbsence oHelpAbsence;
+	public HelpRetard oHelpRetard;
+	public HelpVisualiser oHelpVisualiser;
 	
 	public JMenu mnRetard;
 	public JMenu mnAbsence;
@@ -52,20 +63,25 @@ public class AtStart extends JFrame {
 	 * Create the frame.
 	 */
 	public AtStart(MainControl unControleur, AjouterRetardControl unControlAjoutRetard, AjouterAbsenceControl unControlAjoutAbsence, VisualiserRetardControl unControlVisuaRetard,
-			VisualiserAbsenceControl unControlVisuaAbsence) {
+			VisualiserAbsenceControl unControlVisuaAbsence, HelpControl unControlHelp) {
 		this.setResizable(false);
 		this.monControleur=unControleur;
 		this.controlAjoutRetard=unControlAjoutRetard;
 		this.controlAjoutAbsence=unControlAjoutAbsence;
 		this.controlVisuaRetard=unControlVisuaRetard;
 		this.controlVisuaAbsence=unControlVisuaAbsence;
+		this.controlHelp=unControlHelp;
 		oAjoutRetard = new AjouterRetard(controlAjoutRetard);
 		oEmpty = new Empty();
 		oAjoutAbsence = new AjouterAbsence(controlAjoutAbsence);
 		oVisuaAbsence = new VisualiserAbsence(controlVisuaAbsence);
 		oVisuaRetard = new VisualiserRetard(controlVisuaRetard);
-		oHelp = new Help();
+		oHelp = new Help(controlHelp);
 		oInfosAppli = new InfosApplication();
+		oHelpConnexion = new HelpConnexion(controlHelp);
+		oHelpAbsence = new HelpAbsence(controlHelp);
+		oHelpRetard = new HelpRetard(controlHelp);
+		oHelpVisualiser = new HelpVisualiser(controlHelp);
 		
 		setTitle("Carnet Num\u00E9rique");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
