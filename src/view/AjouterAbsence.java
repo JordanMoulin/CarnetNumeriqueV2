@@ -9,17 +9,20 @@ import javax.swing.JLabel;
 import com.toedter.components.JSpinField;
 
 import control.AjouterAbsenceControl;
+import control.AjouterRetardControl;
 
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
+/**
+ * Classe AjouterAbsence, est une JPanel qui affiche la page des tickets à ajouter
+ * @author Jordan
+ *
+ */
 public class AjouterAbsence extends JPanel {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	
+	private static final long serialVersionUID = 1L;
 	protected AjouterAbsenceControl monControleur;
 	public JTextField txtMotifA;
 	public JDateChooser dateA;
@@ -30,7 +33,8 @@ public class AjouterAbsence extends JPanel {
 	public JButton btnNettoyerA;
 
 	/**
-	 * Create the panel.
+	 * Construction du Panel
+	 * @param unControleur {@link AjouterAbsenceControl}
 	 */
 	public AjouterAbsence(AjouterAbsenceControl unControleur) {
 		this.monControleur=unControleur;
@@ -90,7 +94,10 @@ public class AjouterAbsence extends JPanel {
 		add(btnNettoyerA);
 		btnNettoyerA.addActionListener(monControleur);
 	}
-	
+
+	 /** Méthode qui permet de nettoyer l'objet
+	 * @return {@link AjouterAbsence} - Un nouvel objet AjouterAbsence
+	 */
 	public AjouterAbsence clean(){
 		return new AjouterAbsence(monControleur);
 	}

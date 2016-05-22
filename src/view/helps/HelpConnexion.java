@@ -11,18 +11,20 @@ import javax.swing.JButton;
 
 import control.HelpControl;
 
+/**
+ * Classe HelpConnexion, est une JPanel qui affiche les différentes aides pour cette application.
+ * @author Jordan
+ *
+ */
 public class HelpConnexion extends JPanel {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	protected HelpControl monControleur;
-	
 	public JButton btnRetourC;
 
 	/**
-	 * Create the panel.
+	 * Construction du Panel
+	 * @param unControleur {@link HelpControl}
 	 */
 	public HelpConnexion(HelpControl unControleur) {
 		this.monControleur=unControleur;

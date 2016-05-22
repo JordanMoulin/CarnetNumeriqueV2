@@ -8,18 +8,20 @@ import control.HelpControl;
 import java.awt.Font;
 import javax.swing.JButton;
 
+/**
+ * Classe HelpVisualiser, est une JPanel qui affiche les différentes aides pour cette application.
+ * @author Jordan
+ *
+ */
 public class HelpVisualiser extends JPanel {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	protected HelpControl monControleur;
-	
 	public JButton btnRetourV;
 
 	/**
-	 * Create the panel.
+	 * Construction du Panel
+	 * @param unControleur {@link HelpControl}
 	 */
 	public HelpVisualiser(HelpControl unControleur) {
 		this.monControleur=unControleur;

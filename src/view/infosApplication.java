@@ -4,23 +4,26 @@ import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import java.awt.Font;
 
+/**
+ * Classe InfosApplication, est une JPanel qui affiche les éléments à propos de cette application et des developpeurs
+ * @author Jordan
+ *
+ */
 public class InfosApplication extends JPanel {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Create the panel.
+	 * Construction du Panel
 	 */
 	public InfosApplication() {
 		setLayout(null);
 		
 		JTextPane txtpnFdfdf = new JTextPane();
 		txtpnFdfdf.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		txtpnFdfdf.setText("Cette application a \u00E9tait r\u00E9alis\u00E9 par Erwan Agnelet & Jordan Moulin en deuxi\u00E8me ann\u00E9e de BTS SIO au lyc\u00E9e Andr\u00E9 Malraux \u00E0 Allonnes 72700.\r\n");
+		txtpnFdfdf.setText("Cette application a été réalisée par Erwan Agnelet & Jordan Moulin en deuxième année de BTS SIO au lycée André Malraux à Allonnes 72700.\r\n");
 		txtpnFdfdf.setBounds(10, 114, 430, 43);
+		txtpnFdfdf.setEditable(false);
 		add(txtpnFdfdf);
 
 	}

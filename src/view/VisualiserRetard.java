@@ -2,6 +2,7 @@ package view;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import control.VisualiserRetardControl;
 
@@ -24,6 +25,7 @@ public class VisualiserRetard extends JPanel {
 	public JLabel login;
 	public JLabel nombre;
 	public JButton btnTrierR;
+	public JTextField tfFiltrer;
 
 	/**
 	 * Construction du Panel
@@ -61,6 +63,11 @@ public class VisualiserRetard extends JPanel {
 		btnTrierR.setBounds(310, 11, 120, 23);
 		add(btnTrierR);
 		btnTrierR.addActionListener(monControleur);
+		
+		tfFiltrer = new JTextField();
+		tfFiltrer.setBounds(10, 11, 290, 23);
+		add(tfFiltrer);
+		tfFiltrer.addActionListener(monControleur);
 	}
 
 	/**

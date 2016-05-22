@@ -46,6 +46,8 @@ public class AjouterRetardControl implements ActionListener{
 				oRetard = new Retard(vue.oAjoutRetard.minutesR.getValue(), vue.oAjoutRetard.txtMotifR.getText(), controleurPrin.oUser);
 				oRetardBD.insertRetard(controleurPrin.connect, oRetard);
 				JOptionPane.showMessageDialog(vue.oAjoutRetard, "Votre ticket de retard a été ajouté !");
+				vue.oAjoutRetard = vue.oAjoutRetard.clean();
+				controleurPrin.changementPanel(vue.oAjoutRetard);
 			}
 		}
 		//Lorsqu'on clic sur le bouton Nettoyer

@@ -11,12 +11,14 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 
+/**
+ * Classe ConnexionView, est une JPanel qui affiche l'écran de connexion
+ * @author Jordan
+ *
+ */
 public class ConnexionView extends JPanel {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
-	
 	protected MainControl monControleur;
 	public JButton btnConnexion;
 	public JTextField password;
@@ -24,7 +26,8 @@ public class ConnexionView extends JPanel {
 	public JLabel lblErreur;
 
 	/**
-	 * Create the panel.
+	 * Construction du Panel
+	 * @param unControleur {@link MainControl}
 	 */
 	public ConnexionView(MainControl unControleur) {
 		this.monControleur=unControleur;
@@ -51,10 +54,10 @@ public class ConnexionView extends JPanel {
 		add(lblLogin);
 		
 		JLabel lblMotDePasse = new JLabel("Mot de passe :");
-		lblMotDePasse.setBounds(153, 95, 102, 14);
+		lblMotDePasse.setBounds(172, 95, 102, 14);
 		add(lblMotDePasse);
 		
-		lblErreur = new JLabel("You Fail !");
+		lblErreur = new JLabel("");
 		lblErreur.setHorizontalAlignment(SwingConstants.CENTER);
 		lblErreur.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblErreur.setForeground(Color.RED);
@@ -63,6 +66,10 @@ public class ConnexionView extends JPanel {
 		lblErreur.setVisible(false);
 	}
 	
+	/**
+	 * Méthode qui permet de nettoyer l'objet
+	 * @return {@link ConnexionView} - Un nouvel objet ConnexionView
+	 */
 	public ConnexionView clean(){
 		return new ConnexionView(monControleur);
 	}

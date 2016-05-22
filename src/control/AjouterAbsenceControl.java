@@ -48,6 +48,8 @@ public class AjouterAbsenceControl implements ActionListener{
 				oAbsence = new Absence(vue.oAjoutAbsence.dateA.getDate(), vue.oAjoutAbsence.dateRetourA.getDate(), vue.oAjoutAbsence.heuresA.getValue(), vue.oAjoutAbsence.minutesA.getValue(), vue.oAjoutAbsence.txtMotifA.getText(), controleurPrin.oUser);
 				oAbsenceBD.insertAbsence(controleurPrin.connect, oAbsence);
 				JOptionPane.showMessageDialog(vue.oAjoutAbsence, "Votre ticket d'absence a été ajouté !");
+				vue.oAjoutAbsence = vue.oAjoutAbsence.clean();
+				controleurPrin.changementPanel(vue.oAjoutAbsence);
 			}
 		}
 		//Lorsqu'on clic sur le bouton Nettoyer

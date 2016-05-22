@@ -11,18 +11,20 @@ import javax.swing.JLabel;
 import control.HelpControl;
 import javax.swing.JButton;
 
+/**
+ * Classe HelpAbsence, est une JPanel qui affiche les différentes aides pour cette application.
+ * @author Jordan
+ *
+ */
 public class HelpAbsence extends JPanel {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	protected HelpControl monControleur;
-	
 	public JButton btnRetourA;
 
 	/**
-	 * Create the panel.
+	 * Construction du Panel
+	 * @param unControleur {@link HelpControl}
 	 */
 	public HelpAbsence(HelpControl unControleur) {
 		this.monControleur=unControleur;

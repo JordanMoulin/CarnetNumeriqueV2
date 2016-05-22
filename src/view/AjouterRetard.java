@@ -11,13 +11,14 @@ import control.AjouterRetardControl;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+/**
+ * Classe AjouterRetard, est une JPanel qui affiche la page des tickets à ajouter
+ * @author Jordan
+ *
+ */
 public class AjouterRetard extends JPanel {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
-	
 	protected AjouterRetardControl monControleur;
 	public JTextField txtMotifR;
 	public JButton btnValiderR;
@@ -25,7 +26,8 @@ public class AjouterRetard extends JPanel {
 	public JButton btnNettoyerR;
 
 	/**
-	 * Create the panel.
+	 * Construction du Panel
+	 * @param unControleur {@link AjouterRetardControl}
 	 */
 	public AjouterRetard(AjouterRetardControl unControleur) {
 		this.monControleur=unControleur;
@@ -42,7 +44,7 @@ public class AjouterRetard extends JPanel {
 		minutesR.setMaximum(59);
 		add(minutesR);
 		
-		JLabel lblAbsentLe = new JLabel("Arriv\u00E9(e) avec");
+		JLabel lblAbsentLe = new JLabel("Arrivé(e) avec");
 		lblAbsentLe.setBounds(168, 11, 89, 14);
 		lblAbsentLe.setHorizontalAlignment(SwingConstants.CENTER);
 		add(lblAbsentLe);
@@ -67,7 +69,10 @@ public class AjouterRetard extends JPanel {
 		add(btnNettoyerR);
 		btnNettoyerR.addActionListener(monControleur);
 	}
-	
+
+	 /** Méthode qui permet de nettoyer l'objet
+	 * @return {@link AjouterRetard} - Un nouvel objet AjouterRetard
+	 */
 	public AjouterRetard clean(){
 		return new AjouterRetard(monControleur);
 	}

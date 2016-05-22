@@ -17,17 +17,20 @@ import view.helps.HelpConnexion;
 import view.helps.HelpRetard;
 import view.helps.HelpVisualiser;
 
+/**
+ * Classe AtStart, est une JFrame qui affiche la fenêtre principale et qui relie tous les JPanel
+ * @author Jordan
+ *
+ */
 public class AtStart extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	protected MainControl monControleur;
 	protected AjouterRetardControl controlAjoutRetard;
 	protected AjouterAbsenceControl controlAjoutAbsence;
 	protected HelpControl controlHelp;
+	
 	public VisualiserRetardControl controlVisuaRetard;
 	public VisualiserAbsenceControl controlVisuaAbsence;
 	public JPanel contentPane;
@@ -47,6 +50,7 @@ public class AtStart extends JFrame {
 	public JMenu mnRetard;
 	public JMenu mnAbsence;
 	public JMenu mnAide;
+	
 	public JLabel lblPseudo;
 	
 	public JMenuItem retardVisualiser;
@@ -59,7 +63,13 @@ public class AtStart extends JFrame {
 	
 
 	/**
-	 * Create the frame.
+	 * Construction de la JFrame
+	 * @param unControleur {@link MainControl}
+	 * @param unControlAjoutRetard {@link AjouterRetardControl}
+	 * @param unControlAjoutAbsence {@link AjouterAbsenceControl}
+	 * @param unControlVisuaRetard {@link VisualiserRetardControl}
+	 * @param unControlVisuaAbsence {@link VisualiserAbsenceControl}
+	 * @param unControlHelp {@link HelpControl}
 	 */
 	public AtStart(MainControl unControleur, AjouterRetardControl unControlAjoutRetard, AjouterAbsenceControl unControlAjoutAbsence, VisualiserRetardControl unControlVisuaRetard,
 			VisualiserAbsenceControl unControlVisuaAbsence, HelpControl unControlHelp) {
@@ -124,7 +134,7 @@ public class AtStart extends JFrame {
 		mntmAide.addActionListener(monControleur);
 		mnAide.add(mntmAide);
 		
-		mntmDeconnexion = new JMenuItem("D\u00E9connexion");
+		mntmDeconnexion = new JMenuItem("Déconnexion");
 		mntmDeconnexion.addActionListener(monControleur);
 		mntmDeconnexion.setEnabled(false);
 		menuBar.add(mntmDeconnexion);

@@ -4,12 +4,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import view.AtStart;
-
+/**
+ * Classe HelpControl, cette classe contrôle toutes les actions effectuées sur les vues du package helps
+ * @author Jordan
+ *
+ */
 public class HelpControl implements ActionListener {
 	
 	private AtStart vue;
 	private MainControl controleurPrin;
 	
+	/**
+	 * Constructeur de la classe, permet quelques initialisations
+	 * @param leControleur {@link MainControl}
+	 */
 	public HelpControl(MainControl leControleur){
 		this.controleurPrin=leControleur;
 	}
@@ -29,6 +37,7 @@ public class HelpControl implements ActionListener {
 			controleurPrin.changementPanel(vue.oHelpVisualiser);
 		}
 		else if(e.getSource()==vue.oHelp.btnRetour){
+			//si un utilisateur est connecté
 			if(vue.lblPseudo.getText()!=""){
 				controleurPrin.changementPanel(vue.oEmpty);
 			}
@@ -49,8 +58,9 @@ public class HelpControl implements ActionListener {
 			controleurPrin.changementPanel(vue.oHelp);
 		}
 	}
+	
 	/**
-	 * M�thode permettant de lier ce controleur � la vue AtStart
+	 * Méthode permettant de lier ce controleur et la vue AtStart
 	 * @param laVue {@link AtStart}
 	 */
 	public void lienVue(AtStart laVue){

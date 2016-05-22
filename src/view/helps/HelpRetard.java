@@ -10,18 +10,20 @@ import control.HelpControl;
 import java.awt.Font;
 import javax.swing.JButton;
 
+/**
+ * Classe HelpRetard, est une JPanel qui affiche les différentes aides pour cette application.
+ * @author Jordan
+ *
+ */
 public class HelpRetard extends JPanel {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	protected HelpControl monControleur;
-	
 	public JButton btnRetourR;
 
 	/**
-	 * Create the panel.
+	 * Construction du Panel
+	 * @param unControleur {@link HelpControl}
 	 */
 	public HelpRetard(HelpControl unControleur) {
 		this.monControleur=unControleur;
