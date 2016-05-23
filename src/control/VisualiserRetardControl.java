@@ -54,6 +54,7 @@ public class VisualiserRetardControl implements ActionListener {
 			vue.oVisuaRetard.id.setVisible(false);
 			vue.oVisuaRetard.login.setVisible(false);
 			vue.oVisuaRetard.btnTrierR.setVisible(false);
+			vue.oVisuaRetard.tfFiltrer.setVisible(false);
 			vue.oVisuaRetard.dater.setBounds(65, 40, 65, 23);
 			vue.oVisuaRetard.duree.setBounds(150, 40, 60, 23);
 			vue.oVisuaRetard.motif.setBounds(230, 40, 400, 23);

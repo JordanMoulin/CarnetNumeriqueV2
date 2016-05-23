@@ -54,6 +54,7 @@ public class VisualiserAbsenceControl implements ActionListener{
 			vue.oVisuaAbsence.id.setVisible(false);
 			vue.oVisuaAbsence.login.setVisible(false);
 			vue.oVisuaAbsence.btnTrierA.setVisible(false);
+			vue.oVisuaAbsence.tfFiltrer.setVisible(false);
 			vue.oVisuaAbsence.datedebut.setBounds(35, 40, 65, 23);
 			vue.oVisuaAbsence.dateretour.setBounds(100, 40, 200, 23);
 			vue.oVisuaAbsence.motif.setBounds(215, 40, 400, 23);
