@@ -84,14 +84,16 @@ public class MainControl implements ActionListener/*, KeyListener*/{
 			vue.oVisuaAbsence = vue.oVisuaAbsence.clean();
 			changementPanel(vue.oVisuaAbsence);
 			//construction du tableau des tickets
-			vue.controlVisuaAbsence.appelTableau(this);
+			vue.controlVisuaAbsence.lienControleur(this);;
+			vue.controlVisuaAbsence.appelTableau("");
 		}
 		//Lorsqu'on clic sur le bouton Visualiser du menu Retard
 		else if(e.getSource()==vue.retardVisualiser){
 			vue.oVisuaRetard = vue.oVisuaRetard.clean();
 			changementPanel(vue.oVisuaRetard);
 			//construction du tableau des tickets
-			vue.controlVisuaRetard.appelTableau(this);
+			vue.controlVisuaRetard.lienControleur(this);
+			vue.controlVisuaRetard.appelTableau("");
 		}
 		//Lorsqu'on clic sur le bouton Aide du menu ?
 		else if(e.getSource()==vue.mntmAide){

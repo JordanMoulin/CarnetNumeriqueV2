@@ -84,6 +84,52 @@ public class AbsenceBD {
 		}
 		return lAbsence;
 	}
+
+	/**
+	 * Méthode permettant de récupérer tous les tickets d'absence d'un utilisateur en fonction du filtre
+	 * @param maConnection Connection
+	 * @param option String
+	 * @return List - La liste d'absence
+	 */
+	public List<Absence> filtreAbsence(Connection maConnection, String option){
+		//Déclaration de la liste
+		List<Absence> lAbsence= new ArrayList<Absence>();
+		ResultSet curseurResultat;
+		try {
+			//Requête SQL pour le filtrage
+			String QUERY_SELECT_ALL_ADMIN = "select id, "
+											+ "datedebut, "
+											+ "dateretour, "
+											+ "dateretourheure, "
+											+ "dateretourminute, "
+											+ "trim(motif) as motif, "
+											+ "trim(idutilisateur) as idutilisateur "
+											+ "from ppe4.absence a "
+											+ "inner join ppe4.utilisateur b on a.idutilisateur=b.login "
+											+ "where b.nom='"
+											+ option
+											+ "';";
+			
+			Statement maRequete = maConnection.createStatement();
+			
+			//Execution de la requête pour un admin
+			curseurResultat = maRequete.executeQuery(QUERY_SELECT_ALL_ADMIN);
+
+			while(curseurResultat.next()){
+				lAbsence.add(new Absence(curseurResultat.getInt("id"), 
+					curseurResultat.getDate("datedebut"), 
+					curseurResultat.getDate("dateretour"), 
+					curseurResultat.getInt("dateretourheure"), 
+					curseurResultat.getInt("dateretourminute"), 
+					curseurResultat.getString("motif"), 
+					new UtilisateurBD().recupUtilisateur(maConnection, curseurResultat.getString("idutilisateur"))));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return lAbsence;
+	}
 	
 	/**
 	 * Méthode permettant d'insérer un nouveau ticket d'absence dans la BDD

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import control.MainControl;
 import object.Retard;
 import object.Utilisateur;
 
@@ -71,6 +72,48 @@ public class RetardBD {
 							curseurResultat.getString("motif"), 
 							utilisateur));
 				}
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return lRetard;
+	}
+	
+	/**
+	 * Méthode permettant de récupérer tous les tickets de retard d'un utilisateur en fonction du filtre
+	 * @param maConnection Connection
+	 * @param option String
+	 * @return List - La liste de retard
+	 */
+	public List<Retard> filtreRetard(Connection maConnection, String option){
+		//Déclaration de la liste
+		List<Retard> lRetard= new ArrayList<Retard>();
+		ResultSet curseurResultat;
+		try {
+			//Requête SQL pour le filtrage
+			String QUERY_SELECT_ALL_ADMIN = "select id, "
+											+ "dater, "
+											+ "duree, "
+											+ "trim(motif) as motif, "
+											+ "trim(idutilisateur) as idutilisateur "
+											+ "from ppe4.retard a "
+											+ "inner join ppe4.utilisateur b on a.idutilisateur=b.login "
+											+ "where b.nom='"
+											+ option.toLowerCase()
+											+ "';";
+			
+			Statement maRequete = maConnection.createStatement();
+			
+			//Execution de la requête pour un admin
+			curseurResultat = maRequete.executeQuery(QUERY_SELECT_ALL_ADMIN);
+
+			while(curseurResultat.next()){
+				lRetard.add(new Retard(curseurResultat.getInt("id"), 
+					curseurResultat.getDate("dater"),
+					curseurResultat.getInt("duree"), 
+					curseurResultat.getString("motif"), 
+					new UtilisateurBD().recupUtilisateur(maConnection, curseurResultat.getString("idutilisateur"))));
 			}
 			
 		} catch (SQLException e) {

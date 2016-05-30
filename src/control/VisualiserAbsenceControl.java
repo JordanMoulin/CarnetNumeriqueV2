@@ -19,12 +19,22 @@ public class VisualiserAbsenceControl implements ActionListener{
 
 	private AtStart vue;
 	private AbsenceBD oAbsenceBD;
+	private MainControl leControleur;
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		//Lorsqu'on clic sur le bouton Trier
 		if(e.getSource()==vue.oVisuaAbsence.btnTrierA){
-			
+			//on garde le filtre dans un string pour eviter de le perdre lors du nettoyage
+			String temp = vue.oVisuaAbsence.tfFiltrer.getText().trim().toLowerCase();
+
+			//nettoyage du panel
+			vue.oVisuaAbsence = vue.oVisuaAbsence.clean();
+			leControleur.changementPanel(vue.oVisuaAbsence);
+				
+			//construction du tableau des tickets
+			appelTableau(temp);
+			vue.oVisuaAbsence.tfFiltrer.setText(temp);
 		}
 	}
 	
@@ -35,15 +45,30 @@ public class VisualiserAbsenceControl implements ActionListener{
 	public void lienVue(AtStart laVue){
 		this.vue=laVue;
 	}
+
+	/**
+	 * Méthode permettant de lier ce controleur au controleur principal
+	 * @param leControleur {@link MainControl}
+	 */
+	public void lienControleur(MainControl leControleur){
+		this.leControleur=leControleur;
+	}
 	
 	/**
 	 * Méthode qui construit le tableau des tickets d'absences
 	 * @param leControleur {@link MainControl}
 	 */
-	public void appelTableau(MainControl leControleur){
+	public void appelTableau(String option){
 		//récupération de la liste de tickets
 		oAbsenceBD = new AbsenceBD();
-		List<Absence> lAbsence = oAbsenceBD.recupAbsence(leControleur.connect, leControleur.oUser);
+		List<Absence> lAbsence ;
+
+		//si il y a une option de filtrage
+		if(!option.equals("")){
+			lAbsence = oAbsenceBD.filtreAbsence(leControleur.connect, option);
+		}else{
+			lAbsence = oAbsenceBD.recupAbsence(leControleur.connect, leControleur.oUser);
+		}
 
 		//hauteur du premier ticket
 		int hauteur = 67;

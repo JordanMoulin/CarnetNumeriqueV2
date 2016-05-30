@@ -19,12 +19,22 @@ public class VisualiserRetardControl implements ActionListener {
 
 	private AtStart vue;
 	private RetardBD oRetardBD;
+	private MainControl leControleur;
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		//Lorsqu'on clic sur le bouton Trier
 		if(e.getSource()==vue.oVisuaRetard.btnTrierR){
+			//on garde le filtre dans un string pour eviter de le perdre lors du nettoyage
+			String temp = vue.oVisuaRetard.tfFiltrer.getText().trim().toLowerCase();
 			
+			//nettoyage du panel
+			vue.oVisuaRetard = vue.oVisuaRetard.clean();
+			leControleur.changementPanel(vue.oVisuaRetard);
+			
+			//construction du tableau des tickets
+			appelTableau(temp);
+			vue.oVisuaRetard.tfFiltrer.setText(temp);
 		}
 	}
 	
@@ -37,14 +47,29 @@ public class VisualiserRetardControl implements ActionListener {
 	}
 	
 	/**
+	 * Méthode permettant de lier ce controleur au controleur principal
+	 * @param leControleur {@link MainControl}
+	 */
+	public void lienControleur(MainControl leControleur){
+		this.leControleur=leControleur;
+	}
+	
+	/**
 	 * Méthode qui construit le tableau des tickets des retards
 	 * @param leControleur {@link MainControl}
 	 */
-	public void appelTableau(MainControl leControleur){
+	public void appelTableau(String option){
 		//récupération de la liste de tickets
 		oRetardBD = new RetardBD();
-		List<Retard> lRetard = oRetardBD.recupRetard(leControleur.connect, leControleur.oUser);
-
+		List<Retard> lRetard;
+		
+		//si il y a une option de filtrage
+		if(!option.equals("")){
+			lRetard = oRetardBD.filtreRetard(leControleur.connect, option);
+		}else{
+			lRetard = oRetardBD.recupRetard(leControleur.connect, leControleur.oUser);
+		}
+		
 		//hauteur du premier ticket
 		int hauteur = 67;
 
