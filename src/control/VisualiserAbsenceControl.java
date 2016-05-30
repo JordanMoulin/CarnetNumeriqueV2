@@ -56,7 +56,7 @@ public class VisualiserAbsenceControl implements ActionListener{
 	
 	/**
 	 * Méthode qui construit le tableau des tickets d'absences
-	 * @param leControleur {@link MainControl}
+	 * @param option String
 	 */
 	public void appelTableau(String option){
 		//récupération de la liste de tickets
