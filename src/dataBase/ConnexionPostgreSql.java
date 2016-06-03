@@ -12,6 +12,8 @@ import java.sql.SQLException;
 public class ConnexionPostgreSql {
 	
 	private static String url = "jdbc:postgresql://bts.bts-malraux72.net:62543/eagnelet";
+	//en cas de connection en local au lycée :
+	private static String urlLocal = "jdbc:postgresql://172.16.99.2/eagnelet";
 	private static String user = "e.agnelet";
 	private static String passwd = "pr55rc";
 	private static Connection connect = null;
@@ -25,11 +27,16 @@ public class ConnexionPostgreSql {
 			try {
 				connect = DriverManager.getConnection(url, user, passwd);
 				} 
-			catch (SQLException e)  
+			catch(SQLException e)
 			{
-				e.printStackTrace();
+				try{
+					connect = DriverManager.getConnection(urlLocal, user, passwd);
+				}
+				catch(SQLException f){
+					e.printStackTrace();
+				}
 			}
 		}
 		 return connect;
-		}
+	}
 }
