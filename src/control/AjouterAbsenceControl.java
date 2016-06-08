@@ -55,15 +55,22 @@ public class AjouterAbsenceControl implements ActionListener{
 				
 				//Vérification entre la date du jour et la date de retour
 				if(retour.before(current)){
-					//Vérification entre la date d'absence et de retour puis insertion de l'objet dans la BDD
-					if(retour.after(absence)){
-					oAbsenceBD.insertAbsence(controleurPrin.connect, oAbsence);
-					JOptionPane.showMessageDialog(vue.oAjoutAbsence, "Votre ticket d'absence a été ajouté !");
-					vue.oAjoutAbsence = vue.oAjoutAbsence.clean();
-					controleurPrin.changementPanel(vue.oAjoutAbsence);
-					}
-					else {
-						JOptionPane.showMessageDialog(vue.oAjoutAbsence, "La date d'absence est supérieure à la date de retour !");
+					if(retour.equals(current)){
+						if(current.getHours()<=vue.oAjoutAbsence.heuresA.getValue()){
+							//Vérification entre la date d'absence et de retour puis insertion de l'objet dans la BDD
+							if(retour.after(absence)){
+							oAbsenceBD.insertAbsence(controleurPrin.connect, oAbsence);
+							JOptionPane.showMessageDialog(vue.oAjoutAbsence, "Votre ticket d'absence a été ajouté !");
+							vue.oAjoutAbsence = vue.oAjoutAbsence.clean();
+							controleurPrin.changementPanel(vue.oAjoutAbsence);
+							}
+							else {
+								JOptionPane.showMessageDialog(vue.oAjoutAbsence, "La date d'absence est supérieure à la date de retour !");
+							}
+						}
+						else {
+							JOptionPane.showMessageDialog(vue.oAjoutAbsence, "L'heure n'est pas bonne !");
+						}
 					}
 				}
 				else {
