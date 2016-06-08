@@ -55,7 +55,7 @@ public class AjouterAbsenceControl implements ActionListener{
 				
 				//Vérification entre la date du jour et la date de retour
 				if(retour.before(current)){
-					//Vérification entre la date d'absence et de retour puis insertion de celui-ci en BDD
+					//Vérification entre la date d'absence et de retour puis insertion de l'objet dans la BDD
 					if(retour.after(absence)){
 					oAbsenceBD.insertAbsence(controleurPrin.connect, oAbsence);
 					JOptionPane.showMessageDialog(vue.oAjoutAbsence, "Votre ticket d'absence a été ajouté !");
