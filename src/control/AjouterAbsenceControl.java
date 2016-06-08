@@ -2,6 +2,8 @@ package control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.swing.JOptionPane;
@@ -49,16 +51,23 @@ public class AjouterAbsenceControl implements ActionListener{
 				oAbsence = new Absence(vue.oAjoutAbsence.dateA.getDate(), vue.oAjoutAbsence.dateRetourA.getDate(), vue.oAjoutAbsence.heuresA.getValue(), vue.oAjoutAbsence.minutesA.getValue(), vue.oAjoutAbsence.txtMotifA.getText(), controleurPrin.oUser);
 				Date retour = vue.oAjoutAbsence.dateRetourA.getDate();
 				Date absence = vue.oAjoutAbsence.dateA.getDate();
+				Date current = new Date();
 				
-				//Vérification entre la date d'absence et de retour puis insertion de celui-ci en BDD
-				if(retour.after(absence)){
+				//Vérification entre la date du jour et la date de retour
+				if(retour.before(current)){
+					//Vérification entre la date d'absence et de retour puis insertion de celui-ci en BDD
+					if(retour.after(absence)){
 					oAbsenceBD.insertAbsence(controleurPrin.connect, oAbsence);
 					JOptionPane.showMessageDialog(vue.oAjoutAbsence, "Votre ticket d'absence a été ajouté !");
 					vue.oAjoutAbsence = vue.oAjoutAbsence.clean();
 					controleurPrin.changementPanel(vue.oAjoutAbsence);
+					}
+					else {
+						JOptionPane.showMessageDialog(vue.oAjoutAbsence, "La date d'absence est supérieure à la date de retour !");
+					}
 				}
 				else {
-					JOptionPane.showMessageDialog(vue.oAjoutAbsence, "Votre ticket d'absence est incorrect !");
+					JOptionPane.showMessageDialog(vue.oAjoutAbsence, "La date du retour est après la date du jour !");
 				}
 			}
 		}
